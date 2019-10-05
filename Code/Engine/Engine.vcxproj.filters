@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="Application.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Error.cpp">
+      <Filter>Core\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Args.cpp">
+      <Filter>Core\PlatformSpecific</Filter>
+    </ClCompile>
+    <ClCompile Include="Console.cpp">
+      <Filter>Core\PlatformSpecific</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>Core\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="OSPlatformUtils.cpp">
+      <Filter>Core\PlatformSpecific</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemInfo.cpp">
+      <Filter>Core\PlatformSpecific</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Core\PlatformSpecific\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Core\PlatformSpecific\Input</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Version.h">
+      <Filter>Core\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseHeader.h">
+      <Filter>Core\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineConfig.h">
+      <Filter>Core\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="InlineFunc.h">
+      <Filter>Core\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Macros.h">
+      <Filter>Core\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform.h">
+      <Filter>Core\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="PlatformCompiler.h">
+      <Filter>Core\Base\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="PlatformOS.h">
+      <Filter>Core\Base\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Error.h">
+      <Filter>Core\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationConfig.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Args.h">
+      <Filter>Core\PlatformSpecific</Filter>
+    </ClInclude>
+    <ClInclude Include="Console.h">
+      <Filter>Core\PlatformSpecific</Filter>
+    </ClInclude>
+    <ClInclude Include="Module.h">
+      <Filter>Core\Template</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>Core\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="LogConfig.h">
+      <Filter>Core\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="OSPlatformUtils.h">
+      <Filter>Core\PlatformSpecific</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemInfo.h">
+      <Filter>Core\PlatformSpecific</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Core\PlatformSpecific\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowNativeData.h">
+      <Filter>Core\PlatformSpecific\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Core\PlatformSpecific\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowConfig.h">
+      <Filter>Core\PlatformSpecific\Window</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Core">
+      <UniqueIdentifier>{0bcf6af9-943b-4145-92bb-248009884fa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Base">
+      <UniqueIdentifier>{77724ee3-a06e-453c-b451-d56d8eb8a2d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Base\Platform">
+      <UniqueIdentifier>{b1627d86-3651-43bf-bcbd-c218ed392b20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{20adfa92-65ac-4508-9163-41f7170d542c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Debug">
+      <UniqueIdentifier>{8d5408fd-a8eb-46a1-b851-28580533f335}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Template">
+      <UniqueIdentifier>{5d56e818-f952-4a21-864d-fd7896e46052}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\PlatformSpecific">
+      <UniqueIdentifier>{87d20703-0f9c-49dd-bf76-6204571d7a1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\PlatformSpecific\Window">
+      <UniqueIdentifier>{b1ea6da0-77c9-4d96-b183-8d149dab8b01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\PlatformSpecific\Input">
+      <UniqueIdentifier>{00bfa07f-98fa-44aa-b03b-8b5670f5f838}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
