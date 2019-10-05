@@ -209,6 +209,8 @@
     </ClCompile>
     <ClCompile Include="SystemInfo.cpp" />
     <ClCompile Include="Window.cpp" />
+    <ClCompile Include="WindowDPI.cpp" />
+    <ClCompile Include="WindowWindowProc.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -4,6 +4,8 @@
 #include "Console.h"
 #include "Log.h"
 #include "OSPlatformUtils.h"
+#include "Window.h"
+#include "Input.h"
 //-----------------------------------------------------------------------------
 struct AppPimpl
 {
@@ -27,12 +29,16 @@ bool Application::init(const ApplicationConfig &config)
 	bool isError = false;
 
 	isError = (isError || !Args::Create());
-	isError = (isError || !Console::Create());
+
+	if (config.console)
+		isError = (isError || !Console::Create());
+
 	isError = (isError || !Log::Create(m_impl->config.log));
 	isError = (isError || !OSPlatformUtils::Create());
+	isError = (isError || !Window::Create(m_impl->config.window));
+	isError = (isError || !Input::Create());
 
-	GetModule<Log>().Print(LogType::Info, "hell\nhe");
-	GetModule<Log>().Print(LogType::Info, "hell\nhe");
+	GetModule<Log>().Print(LogType::Info, "Hell");
 
 	return !isError;
 }
@@ -55,11 +61,16 @@ bool Application::update()
 {
 	if (IsErrorCriticalExit()) return false;
 
+	if (!GetModule<Window>().Update())
+		return false;
+
 	return true;
 }
 //-----------------------------------------------------------------------------
 void Application::close()
 {
+	Input::Destroy();
+	Window::Destroy();
 	OSPlatformUtils::Destroy();
 	Log::Destroy();
 	Console::Destroy();

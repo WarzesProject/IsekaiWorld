@@ -7,4 +7,6 @@ struct ApplicationConfig
 {
 	LogConfig log;
 	WindowConfig window;
+
+	bool console = true;
 };

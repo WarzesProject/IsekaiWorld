@@ -80,7 +80,7 @@ private:
 };
 
 template <typename T>
-T& GetModule()
+inline T& GetModule()
 {
 	return T::Get();
 }

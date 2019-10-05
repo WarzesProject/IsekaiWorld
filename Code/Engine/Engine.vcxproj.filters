@@ -29,6 +29,12 @@
     <ClCompile Include="Input.cpp">
       <Filter>Core\PlatformSpecific\Input</Filter>
     </ClCompile>
+    <ClCompile Include="WindowDPI.cpp">
+      <Filter>Core\PlatformSpecific\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowWindowProc.cpp">
+      <Filter>Core\PlatformSpecific\Window</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />

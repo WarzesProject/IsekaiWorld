@@ -8,4 +8,6 @@ public:
 	Console();
 
 	void Print(std::string_view str);
+
+private:
 };
