@@ -174,13 +174,17 @@
     <ClInclude Include="Args.h" />
     <ClInclude Include="BaseHeader.h" />
     <ClInclude Include="Console.h" />
+    <ClInclude Include="D3D11RenderDevice.h" />
     <ClInclude Include="EngineConfig.h" />
     <ClInclude Include="Error.h" />
     <ClInclude Include="InlineFunc.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="IRenderDevice.h" />
     <ClInclude Include="Log.h" />
     <ClInclude Include="LogConfig.h" />
     <ClInclude Include="Macros.h" />
+    <ClInclude Include="RenderConfig.h" />
+    <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="Subsystem.h" />
     <ClInclude Include="OSPlatformUtils.h" />
     <ClInclude Include="Platform.h" />
@@ -197,10 +201,12 @@
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Args.cpp" />
     <ClCompile Include="Console.cpp" />
+    <ClCompile Include="D3D11RenderDevice.cpp" />
     <ClCompile Include="Error.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="OSPlatformUtils.cpp" />
+    <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

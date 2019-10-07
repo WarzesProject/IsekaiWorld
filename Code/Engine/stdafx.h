@@ -12,6 +12,7 @@
 #include <string_view>
 #include <vector>
 #include <iostream>
+#include <functional>
 
 //-----------------------------------------------------------------------------
 // Platform Header

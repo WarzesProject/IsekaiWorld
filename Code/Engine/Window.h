@@ -6,11 +6,18 @@
 
 class Window : public Subsystem<Window>
 {
+#if SE_PLATFORM_WINDOWS
+	friend LRESULT CALLBACK windowProc(HWND, UINT, WPARAM, LPARAM);
+#endif
 public:
 	Window(WindowConfig &config);
 	~Window();
 
 	bool Update();
+
+	bool IsActive() const { return m_isActive; }
+	uint16_t GetWidth() const { return m_config.width; }
+	uint16_t GetHeight() const { return m_config.height; }
 
 	const WindowNativeData& GetNative() const;
 	
@@ -35,4 +42,6 @@ private:
 	int m_windowY = 0;
 	int m_windowWidth = 0;
 	int m_windowHeight = 0;
+
+	bool m_isActive = true;
 };

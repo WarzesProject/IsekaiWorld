@@ -35,6 +35,12 @@
     <ClCompile Include="WindowWindowProc.cpp">
       <Filter>Core\PlatformSpecific\Window</Filter>
     </ClCompile>
+    <ClCompile Include="RenderSystem.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="D3D11RenderDevice.cpp">
+      <Filter>Render\D3D11</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -104,6 +110,18 @@
     <ClInclude Include="Configuration.h">
       <Filter>Engine</Filter>
     </ClInclude>
+    <ClInclude Include="RenderSystem.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderConfig.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="IRenderDevice.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="D3D11RenderDevice.h">
+      <Filter>Render\D3D11</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Core">
@@ -135,6 +153,12 @@
     </Filter>
     <Filter Include="Core\Object">
       <UniqueIdentifier>{8fa1d60a-e53b-4097-b1dd-191bd3a9797d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render">
+      <UniqueIdentifier>{4c525c92-dc44-4e8a-a2f7-c92c951a71cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render\D3D11">
+      <UniqueIdentifier>{43cc3530-3cec-4521-b751-e3253bc35223}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

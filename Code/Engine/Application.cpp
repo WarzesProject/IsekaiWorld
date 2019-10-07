@@ -6,10 +6,14 @@
 #include "OSPlatformUtils.h"
 #include "Window.h"
 #include "Input.h"
+#include "RenderSystem.h"
 //-----------------------------------------------------------------------------
 struct AppPimpl
 {
-	ApplicationConfig config;
+	Configuration config;
+	bool activeUpdate = true;
+	bool activeBeginFrame = true;
+	bool activeEndFrame = true;
 };
 //-----------------------------------------------------------------------------
 Application::Application()
@@ -22,7 +26,7 @@ Application::~Application()
 	SafeDelete(m_impl);
 }
 //-----------------------------------------------------------------------------
-bool Application::init(const ApplicationConfig &config)
+bool Application::init(const Configuration &config)
 {
 	m_impl->config = config;
 
@@ -41,13 +45,14 @@ bool Application::initSubsystem()
 
 	SE_INIT_SUBSYSTEM(Args::Create());
 	
-	if (config.console)
+	if (config.visibleConsole)
 		SE_INIT_SUBSYSTEM(Console::Create());
 
 	SE_INIT_SUBSYSTEM(Log::Create(config.log));
 	SE_INIT_SUBSYSTEM(OSPlatformUtils::Create());
 	SE_INIT_SUBSYSTEM(Window::Create(config.window));
 	SE_INIT_SUBSYSTEM(Input::Create());
+	SE_INIT_SUBSYSTEM(RenderSystem::Create(config.render));
 
 #undef SE_INIT_SUBSYSTEM
 
@@ -57,6 +62,12 @@ bool Application::initSubsystem()
 bool Application::beginFrame()
 {
 	if (IsErrorCriticalExit()) return false;
+	if (!m_impl->activeBeginFrame) return true;
+
+	static auto &render = GetSubsystem<RenderSystem>();
+
+	if (!render.BeginFrame())
+		return false;
 
 	return true;
 }
@@ -64,6 +75,12 @@ bool Application::beginFrame()
 bool Application::endFrame()
 {
 	if (IsErrorCriticalExit()) return false;
+	if (!m_impl->activeEndFrame) return true;
+
+	static auto &render = GetSubsystem<RenderSystem>();
+
+	if (!render.EndFrame())
+		return false;
 
 	return true;
 }
@@ -72,9 +89,25 @@ bool Application::update()
 {
 	if (IsErrorCriticalExit()) return false;
 
-	static Window &currentWnd = GetSubsystem<Window>();
+	static Window &window = GetSubsystem<Window>();
 
-	if (!currentWnd.Update())
+	TODO("при неактивности окна или его сворачивании нужно снижать потребление ресурсов. но с неактивностью пока косяк - ведь оно может быть неактивно, но все еще видимо - а значит всеже должно рендерится... возможно лучше просто понижать vsync? код пока оставлен для примера обработки данного события");
+	TODO(" а вообще при деактивации окна должна освобождаться мышь (если она захвачена, а при активации возвращаться к норме");
+	if (window.IsActive())
+	{
+		m_impl->activeBeginFrame = true;
+		m_impl->activeEndFrame = true;
+		m_impl->activeUpdate = true;
+	}
+	else
+	{
+		m_impl->activeBeginFrame = false;
+		m_impl->activeEndFrame = false;
+	}
+
+	if (!m_impl->activeUpdate) return true;
+
+	if (!window.Update())
 		return false;
 
 	return true;
@@ -82,6 +115,7 @@ bool Application::update()
 //-----------------------------------------------------------------------------
 void Application::close()
 {
+	RenderSystem::Destroy();
 	Input::Destroy();
 	Window::Destroy();
 	OSPlatformUtils::Destroy();

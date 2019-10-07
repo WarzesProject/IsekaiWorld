@@ -1,13 +1,13 @@
 #pragma once
 
 #include "Error.h"
-#include "ApplicationConfig.h"
+#include "Configuration.h"
 
 class Application
 {
 public:	
 	template<typename AppImplTemplate>
-	static int Run(const ApplicationConfig &config)
+	static int Run(const Configuration &config)
 	{
 		Application engineApp;
 		if (!IsErrorCriticalExit() && engineApp.init(config))
@@ -41,7 +41,7 @@ private:
 	Application();
 	~Application();
 
-	bool init(const ApplicationConfig &config);
+	bool init(const Configuration &config);
 	bool initSubsystem();
 	bool beginFrame();
 	bool endFrame();

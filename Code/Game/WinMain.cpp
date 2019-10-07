@@ -1,8 +1,6 @@
 #include "EngineHeader.h"
 #include <Windows.h>
 
-алимер и оузер
-
 //-----------------------------------------------------------------------------
 class GameApp
 {
@@ -19,7 +17,7 @@ int WINAPI wWinMain(
 	[[maybe_unused]] _In_ LPWSTR lpCmdLine,
 	[[maybe_unused]] _In_ int nCmdShow)
 {
-	ApplicationConfig config;
+	Configuration config;
 	return Application::Run<GameApp>(config);
 }
 //-----------------------------------------------------------------------------
