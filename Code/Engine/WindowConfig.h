@@ -8,5 +8,4 @@ struct WindowConfig
 	bool highDpi = true;
 	bool resizable = true;
 	bool fullscreen = false;
-	bool exclusiveFullscreen = false;
 };

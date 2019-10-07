@@ -146,55 +146,48 @@ const WindowNativeData& Window::GetNative() const
 void Window::switchFullscreen(bool newFullscreen)
 {
 #if SE_PLATFORM_WINDOWS
-	if (m_config.exclusiveFullscreen)
+	m_windowStyle = (newFullscreen ? m_windowFullscreenStyle : m_windowWindowedStyle) | WS_VISIBLE;
+	if (!SetWindowLong(m_native.hwnd, GWL_STYLE, m_windowStyle))
+		throw std::system_error(GetLastError(), std::system_category(), "Failed to set window style");
+
+	if (newFullscreen)
 	{
-		//d3d11::RenderDevice->setFullscreen(newFullscreen);
+		RECT windowRect;
+		if (!GetWindowRect(m_native.hwnd, &windowRect))
+		{
+			CriticalErrorExit("Failed to get window rectangle");
+			return;
+		}
+
+		m_windowX = windowRect.left;
+		m_windowY = windowRect.top;
+		m_windowWidth = windowRect.right - windowRect.left;
+		m_windowHeight = windowRect.bottom - windowRect.top;
+
+		MONITORINFO info;
+		info.cbSize = sizeof(MONITORINFO);
+		if (!GetMonitorInfo(m_monitor, &info))
+		{
+			CriticalErrorExit("Failed to get monitor info");
+			return;
+		}
+
+		if (!SetWindowPos(m_native.hwnd, nullptr,
+			info.rcMonitor.left, info.rcMonitor.top,
+			info.rcMonitor.right - info.rcMonitor.left,
+			info.rcMonitor.bottom - info.rcMonitor.top,
+			SWP_FRAMECHANGED | SWP_NOZORDER | SWP_NOOWNERZORDER))
+		{
+			CriticalErrorExit("Failed to set window position");
+			return;
+		}
 	}
 	else
 	{
-		m_windowStyle = (newFullscreen ? m_windowFullscreenStyle : m_windowWindowedStyle) | WS_VISIBLE;
-		if (!SetWindowLong(m_native.hwnd, GWL_STYLE, m_windowStyle))
-			throw std::system_error(GetLastError(), std::system_category(), "Failed to set window style");
-
-		if (newFullscreen)
+		if (!SetWindowPos(m_native.hwnd, nullptr, m_windowX, m_windowY, m_windowWidth, m_windowHeight, SWP_FRAMECHANGED | SWP_NOZORDER | SWP_NOOWNERZORDER))
 		{
-			RECT windowRect;
-			if (!GetWindowRect(m_native.hwnd, &windowRect))
-			{
-				CriticalErrorExit("Failed to get window rectangle");
-				return;
-			}
-
-			m_windowX = windowRect.left;
-			m_windowY = windowRect.top;
-			m_windowWidth = windowRect.right - windowRect.left;
-			m_windowHeight = windowRect.bottom - windowRect.top;
-
-			MONITORINFO info;
-			info.cbSize = sizeof(MONITORINFO);
-			if (!GetMonitorInfo(m_monitor, &info))
-			{
-				CriticalErrorExit("Failed to get monitor info");
-				return;
-			}
-
-			if (!SetWindowPos(m_native.hwnd, nullptr,
-				info.rcMonitor.left, info.rcMonitor.top,
-				info.rcMonitor.right - info.rcMonitor.left,
-				info.rcMonitor.bottom - info.rcMonitor.top,
-				SWP_FRAMECHANGED | SWP_NOZORDER | SWP_NOOWNERZORDER))
-			{
-				CriticalErrorExit("Failed to set window position");
-				return;
-			}
-		}
-		else
-		{
-			if (!SetWindowPos(m_native.hwnd, nullptr, m_windowX, m_windowY, m_windowWidth, m_windowHeight, SWP_FRAMECHANGED | SWP_NOZORDER | SWP_NOOWNERZORDER))
-			{
-				CriticalErrorExit("Failed to set window position");
-				return;
-			}
+			CriticalErrorExit("Failed to set window position");
+			return;
 		}
 	}
 #endif

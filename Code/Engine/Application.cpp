@@ -29,25 +29,24 @@ bool Application::init(const ApplicationConfig &config)
 	if (!initSubsystem())
 		return false;
 
-	GetSubsystem<Log>().Print(LogType::Info, "Hell");
-
 	return true;
 }
 //-----------------------------------------------------------------------------
 bool Application::initSubsystem()
 {
 	bool isError = false;
+	auto &config = m_impl->config;
 
-#define SE_INIT_SUBSYSTEM(_ss) ((isError) = ((isError) || !(_ss)))
+#define SE_INIT_SUBSYSTEM(_ss) ((isError) = ((isError) || (IsErrorCriticalExit()) || !(_ss)))
 
 	SE_INIT_SUBSYSTEM(Args::Create());
-
-	if (m_impl->config.console)
+	
+	if (config.console)
 		SE_INIT_SUBSYSTEM(Console::Create());
 
-	SE_INIT_SUBSYSTEM(Log::Create(m_impl->config.log));
+	SE_INIT_SUBSYSTEM(Log::Create(config.log));
 	SE_INIT_SUBSYSTEM(OSPlatformUtils::Create());
-	SE_INIT_SUBSYSTEM(Window::Create(m_impl->config.window));
+	SE_INIT_SUBSYSTEM(Window::Create(config.window));
 	SE_INIT_SUBSYSTEM(Input::Create());
 
 #undef SE_INIT_SUBSYSTEM

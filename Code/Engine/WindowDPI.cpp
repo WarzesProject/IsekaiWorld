@@ -6,7 +6,7 @@ bool Window::initDPI()
 	if (m_config.highDpi)
 	{
 #if SE_PLATFORM_WINDOWS
-		HMODULE shcoreModule = LoadLibraryW(L"shcore.dll");
+		HMODULE shcoreModule = LoadLibrary(L"shcore.dll");
 		if (shcoreModule)
 		{
 			using SetProcessDpiAwarenessProc = HRESULT(STDAPICALLTYPE *)(int value);
