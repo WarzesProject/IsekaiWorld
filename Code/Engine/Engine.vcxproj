@@ -170,7 +170,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
-    <ClInclude Include="ApplicationConfig.h" />
+    <ClInclude Include="Configuration.h" />
     <ClInclude Include="Args.h" />
     <ClInclude Include="BaseHeader.h" />
     <ClInclude Include="Console.h" />

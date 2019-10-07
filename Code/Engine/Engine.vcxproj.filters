@@ -68,9 +68,6 @@
     <ClInclude Include="Error.h">
       <Filter>Core\Debug</Filter>
     </ClInclude>
-    <ClInclude Include="ApplicationConfig.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
     <ClInclude Include="Args.h">
       <Filter>Core\PlatformSpecific</Filter>
     </ClInclude>
@@ -103,6 +100,9 @@
     </ClInclude>
     <ClInclude Include="Subsystem.h">
       <Filter>Core\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Configuration.h">
+      <Filter>Engine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

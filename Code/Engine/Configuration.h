@@ -3,7 +3,7 @@
 #include "LogConfig.h"
 #include "WindowConfig.h"
 
-struct ApplicationConfig
+struct Configuration
 {
 	LogConfig log;
 	WindowConfig window;
