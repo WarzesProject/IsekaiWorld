@@ -19,10 +19,15 @@ inline void logRenderBackend(RenderBackend backend)
 RenderSystem::RenderSystem(RenderConfig &config)
 	: m_config(config)
 {
-	if (config.gapi == RenderBackend::Direct3D11)
+#if SE_ENABLE_DIRECT3D11
+	if (m_config.gapi == RenderBackend::Direct3D11)
 		m_device = new D3D11RenderDevice();
+#endif
 
-	logRenderBackend(config.gapi);
+	if (!m_device || !m_device->Create(m_config))
+		return;
+
+	logRenderBackend(m_config.gapi);
 
 
 	setValid(true);
@@ -31,5 +36,19 @@ RenderSystem::RenderSystem(RenderConfig &config)
 RenderSystem::~RenderSystem()
 {
 	SafeDelete(m_device);
+}
+//-----------------------------------------------------------------------------
+bool RenderSystem::BeginFrame()
+{
+	if (!m_device->BeginFrame())
+		return false;
+	return true;
+}
+//-----------------------------------------------------------------------------
+bool RenderSystem::EndFrame()
+{
+	if (!m_device->EndFrame())
+		return false;
+	return true;
 }
 //-----------------------------------------------------------------------------

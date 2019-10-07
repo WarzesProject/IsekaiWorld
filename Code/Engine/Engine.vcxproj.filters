@@ -41,6 +41,9 @@
     <ClCompile Include="D3D11RenderDevice.cpp">
       <Filter>Render\D3D11</Filter>
     </ClCompile>
+    <ClCompile Include="D3DUtils.cpp">
+      <Filter>Render\D3DCore</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -122,6 +125,12 @@
     <ClInclude Include="D3D11RenderDevice.h">
       <Filter>Render\D3D11</Filter>
     </ClInclude>
+    <ClInclude Include="D3D11Core.h">
+      <Filter>Render\D3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="D3DUtils.h">
+      <Filter>Render\D3DCore</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Core">
@@ -159,6 +168,9 @@
     </Filter>
     <Filter Include="Render\D3D11">
       <UniqueIdentifier>{43cc3530-3cec-4521-b751-e3253bc35223}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render\D3DCore">
+      <UniqueIdentifier>{2d169e5d-42f7-4ce9-bcba-9927f4b4da9b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

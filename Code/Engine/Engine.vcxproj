@@ -174,7 +174,9 @@
     <ClInclude Include="Args.h" />
     <ClInclude Include="BaseHeader.h" />
     <ClInclude Include="Console.h" />
+    <ClInclude Include="D3D11Core.h" />
     <ClInclude Include="D3D11RenderDevice.h" />
+    <ClInclude Include="D3DUtils.h" />
     <ClInclude Include="EngineConfig.h" />
     <ClInclude Include="Error.h" />
     <ClInclude Include="InlineFunc.h" />
@@ -202,6 +204,7 @@
     <ClCompile Include="Args.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="D3D11RenderDevice.cpp" />
+    <ClCompile Include="D3DUtils.cpp" />
     <ClCompile Include="Error.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Log.cpp" />
