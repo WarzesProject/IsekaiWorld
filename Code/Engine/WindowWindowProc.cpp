@@ -6,7 +6,7 @@ LRESULT CALLBACK windowProc(HWND window, UINT message, WPARAM wParam, LPARAM lPa
 {
 	if (Window::IsValid())
 	{
-		auto &window = GetModule<Window>();
+		static Window &window = GetSubsystem<Window>();
 
 		switch (message)
 		{

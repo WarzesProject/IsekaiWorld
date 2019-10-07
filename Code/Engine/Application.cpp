@@ -26,19 +26,31 @@ bool Application::init(const ApplicationConfig &config)
 {
 	m_impl->config = config;
 
+	if (!initSubsystem())
+		return false;
+
+	GetSubsystem<Log>().Print(LogType::Info, "Hell");
+
+	return true;
+}
+//-----------------------------------------------------------------------------
+bool Application::initSubsystem()
+{
 	bool isError = false;
 
-	isError = (isError || !Args::Create());
+#define SE_INIT_SUBSYSTEM(_ss) ((isError) = ((isError) || !(_ss)))
 
-	if (config.console)
-		isError = (isError || !Console::Create());
+	SE_INIT_SUBSYSTEM(Args::Create());
 
-	isError = (isError || !Log::Create(m_impl->config.log));
-	isError = (isError || !OSPlatformUtils::Create());
-	isError = (isError || !Window::Create(m_impl->config.window));
-	isError = (isError || !Input::Create());
+	if (m_impl->config.console)
+		SE_INIT_SUBSYSTEM(Console::Create());
 
-	GetModule<Log>().Print(LogType::Info, "Hell");
+	SE_INIT_SUBSYSTEM(Log::Create(m_impl->config.log));
+	SE_INIT_SUBSYSTEM(OSPlatformUtils::Create());
+	SE_INIT_SUBSYSTEM(Window::Create(m_impl->config.window));
+	SE_INIT_SUBSYSTEM(Input::Create());
+
+#undef SE_INIT_SUBSYSTEM
 
 	return !isError;
 }
@@ -61,7 +73,9 @@ bool Application::update()
 {
 	if (IsErrorCriticalExit()) return false;
 
-	if (!GetModule<Window>().Update())
+	static Window &currentWnd = GetSubsystem<Window>();
+
+	if (!currentWnd.Update())
 		return false;
 
 	return true;

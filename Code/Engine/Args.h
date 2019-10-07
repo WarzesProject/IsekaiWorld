@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Module.h"
+#include "Subsystem.h"
 
-class Args : public Module<Args>
+class Args : public Subsystem<Args>
 {
 public:
 	Args();

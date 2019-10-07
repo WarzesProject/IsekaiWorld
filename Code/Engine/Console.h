@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Module.h"
+#include "Subsystem.h"
 
-class Console : public Module<Console>
+class Console : public Subsystem<Console>
 {
 public:
 	Console();

@@ -181,7 +181,7 @@
     <ClInclude Include="Log.h" />
     <ClInclude Include="LogConfig.h" />
     <ClInclude Include="Macros.h" />
-    <ClInclude Include="Module.h" />
+    <ClInclude Include="Subsystem.h" />
     <ClInclude Include="OSPlatformUtils.h" />
     <ClInclude Include="Platform.h" />
     <ClInclude Include="PlatformCompiler.h" />

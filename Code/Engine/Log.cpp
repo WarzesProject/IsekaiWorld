@@ -17,10 +17,10 @@ void Log::Print(LogType type, std::string_view str)
 #endif
 
 	if (Console::IsValid() && m_config.PrintConsole)
-		GetModule<Console>().Print(str);
+		GetSubsystem<Console>().Print(str);
 
 	if (OSPlatformUtils::IsValid() && m_config.PrintDebugOutput)
-		GetModule<OSPlatformUtils>().PrintDebugOutput(str);
+		GetSubsystem<OSPlatformUtils>().PrintDebugOutput(str);
 
 	TODO("вывод в слушателей лога");
 	TODO("консоль и дебаг могут быть слушателями?");

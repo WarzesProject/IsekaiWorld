@@ -77,9 +77,6 @@
     <ClInclude Include="Console.h">
       <Filter>Core\PlatformSpecific</Filter>
     </ClInclude>
-    <ClInclude Include="Module.h">
-      <Filter>Core\Template</Filter>
-    </ClInclude>
     <ClInclude Include="Log.h">
       <Filter>Core\Debug</Filter>
     </ClInclude>
@@ -103,6 +100,9 @@
     </ClInclude>
     <ClInclude Include="WindowConfig.h">
       <Filter>Core\PlatformSpecific\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Subsystem.h">
+      <Filter>Core\Object</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -132,6 +132,9 @@
     </Filter>
     <Filter Include="Core\PlatformSpecific\Input">
       <UniqueIdentifier>{00bfa07f-98fa-44aa-b03b-8b5670f5f838}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Object">
+      <UniqueIdentifier>{8fa1d60a-e53b-4097-b1dd-191bd3a9797d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Module.h"
+#include "Subsystem.h"
 #include "WindowConfig.h"
 #include "WindowNativeData.h"
 
-class Window : public Module<Window>
+class Window : public Subsystem<Window>
 {
 public:
 	Window(WindowConfig &config);

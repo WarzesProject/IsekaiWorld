@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Module.h"
+#include "Subsystem.h"
 
-class OSPlatformUtils : public Module<OSPlatformUtils>
+class OSPlatformUtils : public Subsystem<OSPlatformUtils>
 {
 public:
 	OSPlatformUtils();

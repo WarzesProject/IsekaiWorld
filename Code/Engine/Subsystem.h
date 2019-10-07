@@ -3,7 +3,7 @@
 #include "Error.h"
 
 template <typename T>
-class Module
+class Subsystem
 {
 public:
 	template<class ...Args>
@@ -52,8 +52,8 @@ public:
 	}
 
 protected:
-	Module() = default;
-	~Module() = default;
+	Subsystem() = default;
+	~Subsystem() = default;
 
 	static T*& instance()
 	{
@@ -73,14 +73,14 @@ protected:
 	}
 
 private:
-	Module(Module<T>&&) = delete;
-	Module(const Module<T>&) = delete;
-	Module<T>& operator=(Module<T>&&) = delete;
-	Module<T>& operator=(const Module<T>&) = delete;
+	Subsystem(Subsystem<T>&&) = delete;
+	Subsystem(const Subsystem<T>&) = delete;
+	Subsystem<T>& operator=(Subsystem<T>&&) = delete;
+	Subsystem<T>& operator=(const Subsystem<T>&) = delete;
 };
 
 template <typename T>
-inline T& GetModule()
+inline T& GetSubsystem()
 {
 	return T::Get();
 }

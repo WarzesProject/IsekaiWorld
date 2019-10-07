@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Module.h"
+#include "Subsystem.h"
 #include "LogConfig.h"
 
 enum class LogType
@@ -11,7 +11,7 @@ enum class LogType
 	Debug
 };
 
-class Log : public Module<Log>
+class Log : public Subsystem<Log>
 {
 public:
 	Log(LogConfig &config);

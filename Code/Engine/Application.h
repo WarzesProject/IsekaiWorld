@@ -42,6 +42,7 @@ private:
 	~Application();
 
 	bool init(const ApplicationConfig &config);
+	bool initSubsystem();
 	bool beginFrame();
 	bool endFrame();
 	bool update();
