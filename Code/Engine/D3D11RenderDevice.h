@@ -19,7 +19,8 @@ public:
 private:
 	bool isAvailable();
 	bool createFactory(bool enableValidationLayer);
-	void getHardwareAdapter(GpuDevicePreference powerPreference, IDXGIAdapter1** ppAdapter);
+	void getHardwareAdapter(GpuDevicePreference powerPreference, IDXGIAdapter1 **ppAdapter);
+	void initializeInfoAndCaps(IDXGIAdapter1 *adapter);
 
 	ComPtr<IDXGIFactory2> m_dxgiFactory;
 	D3D_FEATURE_LEVEL m_d3dFeatureLevel = D3D_FEATURE_LEVEL_10_0;

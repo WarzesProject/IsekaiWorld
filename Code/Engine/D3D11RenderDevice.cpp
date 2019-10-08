@@ -332,4 +332,79 @@ void D3D11RenderDevice::getHardwareAdapter(GpuDevicePreference powerPreference, 
 	*ppAdapter = adapter.Detach();
 }
 //-----------------------------------------------------------------------------
+void D3D11RenderDevice::initializeInfoAndCaps(IDXGIAdapter1 *adapter)
+{
+	DXGI_ADAPTER_DESC1 desc;
+	adapter->GetDesc1(&desc);
+
+#if SE_DEBUG
+	wchar_t buff[256] = {};
+	swprintf_s(buff, L"Direct3D Adapter: VID:%04X, PID:%04X - %ls\n", desc.VendorId, desc.DeviceId, desc.Description);
+	OutputDebugStringW(buff);
+#endif
+
+	std::wstring deviceName(desc.Description);
+
+	// Initialize caps and info.
+	m_info.backendName = "Direct3D11 - Level " + D3DFeatureLevelToVersion(m_d3dFeatureLevel);
+	//_info.deviceName = std::string(deviceName.begin(), deviceName.end());
+	m_info.vendorName = GetVendorByID(desc.VendorId);
+	m_info.vendorId = desc.VendorId;
+
+	// Under D3D12 minimum supported feature level is 11.0
+	m_caps.features.independentBlend = (m_d3dFeatureLevel >= D3D_FEATURE_LEVEL_10_0);
+	m_caps.features.computeShader = (m_d3dFeatureLevel >= D3D_FEATURE_LEVEL_10_0);
+	m_caps.features.geometryShader = (m_d3dFeatureLevel >= D3D_FEATURE_LEVEL_11_0);
+	m_caps.features.tessellationShader = (m_d3dFeatureLevel >= D3D_FEATURE_LEVEL_11_0);
+	m_caps.features.sampleRateShading = true;
+	m_caps.features.dualSrcBlend = true;
+	m_caps.features.logicOp = (m_d3dFeatureLevel >= D3D_FEATURE_LEVEL_11_1);
+	m_caps.features.multiViewport = true;
+	m_caps.features.indexUInt32 = true;
+	m_caps.features.drawIndirect = (m_d3dFeatureLevel >= D3D_FEATURE_LEVEL_11_0);
+	m_caps.features.alphaToOne = true;
+	m_caps.features.fillModeNonSolid = true;
+	m_caps.features.samplerAnisotropy = true;
+	m_caps.features.textureCompressionBC = true;
+	m_caps.features.textureCompressionPVRTC = false;
+	m_caps.features.textureCompressionETC2 = false;
+	m_caps.features.textureCompressionATC = false;
+	m_caps.features.textureCompressionASTC = false;
+	m_caps.features.pipelineStatisticsQuery = true;
+	m_caps.features.texture1D = true;
+	m_caps.features.texture3D = true;
+	m_caps.features.texture2DArray = (m_d3dFeatureLevel >= D3D_FEATURE_LEVEL_10_0);
+	m_caps.features.textureCubeArray = (m_d3dFeatureLevel >= D3D_FEATURE_LEVEL_10_1);
+	m_caps.features.raytracing = false;
+
+	// Limits
+	m_caps.limits.maxTextureDimension1D = (m_d3dFeatureLevel >= D3D_FEATURE_LEVEL_11_0) ? D3D11_REQ_TEXTURE1D_U_DIMENSION : 8192u;
+	m_caps.limits.maxTextureDimension2D = (m_d3dFeatureLevel >= D3D_FEATURE_LEVEL_11_0) ? D3D11_REQ_TEXTURE2D_U_OR_V_DIMENSION : 8192u;
+	m_caps.limits.maxTextureDimension3D = (m_d3dFeatureLevel >= D3D_FEATURE_LEVEL_10_0) ? D3D11_REQ_TEXTURE3D_U_V_OR_W_DIMENSION : 256u;
+	m_caps.limits.maxTextureDimensionCube = (m_d3dFeatureLevel >= D3D_FEATURE_LEVEL_10_0) ? D3D11_REQ_TEXTURECUBE_DIMENSION : 8192u;
+	m_caps.limits.maxTextureArrayLayers = (m_d3dFeatureLevel >= D3D_FEATURE_LEVEL_10_0) ? D3D11_REQ_TEXTURE2D_ARRAY_AXIS_DIMENSION : 256u;
+	m_caps.limits.maxColorAttachments = D3D11_SIMULTANEOUS_RENDER_TARGET_COUNT;
+	m_caps.limits.maxUniformBufferSize = D3D11_REQ_CONSTANT_BUFFER_ELEMENT_COUNT * 16;
+	m_caps.limits.minUniformBufferOffsetAlignment = 256u;
+	m_caps.limits.maxStorageBufferSize = std::numeric_limits<uint32_t>::max();
+	m_caps.limits.minStorageBufferOffsetAlignment = 16;
+	m_caps.limits.maxSamplerAnisotropy = D3D11_MAX_MAXANISOTROPY;
+	m_caps.limits.maxViewports = D3D11_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE;
+	m_caps.limits.maxViewportDimensions[0] = D3D11_VIEWPORT_BOUNDS_MAX;
+	m_caps.limits.maxViewportDimensions[1] = D3D11_VIEWPORT_BOUNDS_MAX;
+	m_caps.limits.maxTessellationPatchSize = D3D11_IA_PATCH_MAX_CONTROL_POINT_COUNT;
+	m_caps.limits.pointSizeRange[0] = 1.0f;
+	m_caps.limits.pointSizeRange[1] = 1.0f;
+	m_caps.limits.lineWidthRange[0] = 1.0f;
+	m_caps.limits.lineWidthRange[1] = 1.0f;
+	m_caps.limits.maxComputeSharedMemorySize = D3D11_CS_THREAD_LOCAL_TEMP_REGISTER_POOL;
+	m_caps.limits.maxComputeWorkGroupCount[0] = D3D11_CS_DISPATCH_MAX_THREAD_GROUPS_PER_DIMENSION;
+	m_caps.limits.maxComputeWorkGroupCount[1] = D3D11_CS_DISPATCH_MAX_THREAD_GROUPS_PER_DIMENSION;
+	m_caps.limits.maxComputeWorkGroupCount[2] = D3D11_CS_DISPATCH_MAX_THREAD_GROUPS_PER_DIMENSION;
+	m_caps.limits.maxComputeWorkGroupInvocations = D3D11_CS_THREAD_GROUP_MAX_THREADS_PER_GROUP;
+	m_caps.limits.maxComputeWorkGroupSize[0] = D3D11_CS_THREAD_GROUP_MAX_X;
+	m_caps.limits.maxComputeWorkGroupSize[1] = D3D11_CS_THREAD_GROUP_MAX_Y;
+	m_caps.limits.maxComputeWorkGroupSize[2] = D3D11_CS_THREAD_GROUP_MAX_Z;
+}
+//-----------------------------------------------------------------------------
 #endif

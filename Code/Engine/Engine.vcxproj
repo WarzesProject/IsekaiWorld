@@ -187,6 +187,7 @@
     <ClInclude Include="Macros.h" />
     <ClInclude Include="RenderConfig.h" />
     <ClInclude Include="RenderSystem.h" />
+    <ClInclude Include="RenderTypes.h" />
     <ClInclude Include="Subsystem.h" />
     <ClInclude Include="OSPlatformUtils.h" />
     <ClInclude Include="Platform.h" />

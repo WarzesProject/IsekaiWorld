@@ -131,6 +131,9 @@
     <ClInclude Include="D3DUtils.h">
       <Filter>Render\D3DCore</Filter>
     </ClInclude>
+    <ClInclude Include="RenderTypes.h">
+      <Filter>Render</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Core">
