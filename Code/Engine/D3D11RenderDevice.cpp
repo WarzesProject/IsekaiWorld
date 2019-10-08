@@ -2,6 +2,7 @@
 #include "D3D11RenderDevice.h"
 #include "Log.h"
 #include "D3DUtils.h"
+
 #if SE_ENABLE_DIRECT3D11
 //-----------------------------------------------------------------------------
 typedef HRESULT(WINAPI* PFN_CREATE_DXGI_FACTORY)(REFIID _riid, void** _factory);
@@ -63,12 +64,10 @@ bool D3D11RenderDevice::Create(RenderConfig &config)
 		return false;
 
 #if SE_DEBUG
-	bool enableValidationLayer = config.enableValidationLayer;
-#else
-	bool enableValidationLayer = false;
+	m_enableValidationLayer = config.enableValidationLayer;
 #endif
 
-	if (!createFactory(enableValidationLayer))
+	if (!createFactory(m_enableValidationLayer))
 		return false;
 
 	// Get gpu adapter to use.
@@ -78,7 +77,7 @@ bool D3D11RenderDevice::Create(RenderConfig &config)
 	UINT creationFlags = D3D11_CREATE_DEVICE_BGRA_SUPPORT;
 
 #if SE_DEBUG
-	if (enableValidationLayer && D3D11SdkLayersAvailable())
+	if (m_enableValidationLayer && D3D11SdkLayersAvailable())
 		creationFlags |= D3D11_CREATE_DEVICE_DEBUG;
 #endif
 
@@ -110,7 +109,7 @@ bool D3D11RenderDevice::Create(RenderConfig &config)
 			d3dContext.ReleaseAndGetAddressOf()
 		);
 	}
-
+#if SE_DEBUG
 	if (FAILED(hr))
 	{
 		// If the initialization fails, fall back to the WARP device.
@@ -139,7 +138,7 @@ bool D3D11RenderDevice::Create(RenderConfig &config)
 	ThrowIfFailed(hr);
 
 #if SE_DEBUG
-	if (enableValidationLayer)
+	if (m_enableValidationLayer)
 	{
 		ComPtr<ID3D11Debug> d3dDebug;
 		if (SUCCEEDED(device.As(&d3dDebug)))
@@ -172,14 +171,27 @@ bool D3D11RenderDevice::Create(RenderConfig &config)
 	ComPtr<IDXGIDevice3> dxgiDevice;
 	if (SUCCEEDED(m_d3dDevice.As(&dxgiDevice)))
 		ThrowIfFailed(dxgiDevice->SetMaximumFrameLatency(1));
-
-	....
+	
+	initializeInfoAndCaps(adapter.Get());
 
 	return true;
 }
 //-----------------------------------------------------------------------------
 void D3D11RenderDevice::Destroy()
 {
+#if SE_DEBUG
+	if (m_enableValidationLayer)
+	{
+		ComPtr<ID3D11Debug> d3dDebug;
+		if (SUCCEEDED(m_d3dDevice.As(&d3dDebug)))
+		{
+			d3dDebug->ReportLiveDeviceObjects(D3D11_RLDO_SUMMARY);
+		}
+	}
+#endif
+
+	m_d3dDevice.Reset();
+	m_dxgiFactory.Reset();
 }
 //-----------------------------------------------------------------------------
 bool D3D11RenderDevice::BeginFrame()

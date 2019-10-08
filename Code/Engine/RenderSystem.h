@@ -14,6 +14,7 @@ public:
 	bool BeginFrame();
 	bool EndFrame();
 
+	IRenderDevice* GetRenderDevice() const { return m_device; }
 
 private:
 	RenderConfig &m_config;

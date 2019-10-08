@@ -10,11 +10,20 @@ public:
 
 	virtual bool Create(RenderConfig &config) = 0;
 	virtual void Destroy() = 0;
-
+	
 	virtual bool BeginFrame() = 0;
 	virtual bool EndFrame() = 0;
 
+	const RenderDeviceInfo& GetInfo() const
+	{
+		return m_info;
+	}
+	const RenderDeviceCapabilities& GetCaps() const
+	{
+		return m_caps;
+	}
+
 protected:
-	GraphicsDeviceInfo m_info = {};
-	GraphicsDeviceCapabilities m_caps = {};
+	RenderDeviceInfo m_info = {};
+	RenderDeviceCapabilities m_caps = {};
 };

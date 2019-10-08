@@ -13,6 +13,7 @@
 #include <vector>
 #include <iostream>
 #include <functional>
+#include <memory>
 
 //-----------------------------------------------------------------------------
 // Platform Header
@@ -49,6 +50,6 @@
 
 //-----------------------------------------------------------------------------
 // Other Engine Header
-#include "D3D11Core.h"
+#include "D3D11Core.h" // TODO: удалить
 
 #pragma warning(pop)

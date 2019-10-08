@@ -11,6 +11,7 @@ inline void logRenderBackend(RenderBackend backend)
 	{
 	case RenderBackend::Direct3D11:
 		text = "Render Backend: Direct3D 11";
+		break;
 	}
 
 	Log::Info(text);

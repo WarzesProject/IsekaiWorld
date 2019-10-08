@@ -16,6 +16,12 @@ public:
 	bool BeginFrame() final;
 	bool EndFrame() final;
 
+	IDXGIFactory2* GetDXGIFactory() const { return m_dxgiFactory.Get(); }
+	D3D_FEATURE_LEVEL GetDeviceFeatureLevel() const { return m_d3dFeatureLevel; }
+	ID3D11Device1* GetD3DDevice() const { return m_d3dDevice.Get(); }
+	ID3D11DeviceContext1* GetD3DDeviceContext() const { return m_d3dContext.Get(); }
+	bool IsTearingSupported() const { return m_tearingSupported; }
+
 private:
 	bool isAvailable();
 	bool createFactory(bool enableValidationLayer);
@@ -27,8 +33,8 @@ private:
 	ComPtr<ID3D11Device1> m_d3dDevice;
 	ComPtr<ID3D11DeviceContext1> m_d3dContext;
 
-	// Whether tearing is supported.
 	bool m_tearingSupported = false;
+	bool m_enableValidationLayer = false;
 };
 
 #endif
