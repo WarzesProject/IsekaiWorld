@@ -18,12 +18,14 @@ public:
 	bool IsActive() const { return m_isActive; }
 	uint16_t GetWidth() const { return m_config.width; }
 	uint16_t GetHeight() const { return m_config.height; }
+	bool IsResize() const { return m_isResize; }
 
 	const WindowNativeData& GetNative() const;
 	
 private:
 	void switchFullscreen(bool newFullscreen);
 	bool initDPI();
+	void resize();
 
 	WindowConfig &m_config;
 	WindowNativeData m_native;
@@ -44,4 +46,5 @@ private:
 	int m_windowHeight = 0;
 
 	bool m_isActive = true;
+	bool m_isResize = false;
 };

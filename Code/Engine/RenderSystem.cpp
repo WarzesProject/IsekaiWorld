@@ -29,8 +29,7 @@ RenderSystem::RenderSystem(RenderConfig &config)
 		return;
 
 	logRenderBackend(m_config.gapi);
-
-
+	
 	setValid(true);
 }
 //-----------------------------------------------------------------------------

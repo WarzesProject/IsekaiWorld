@@ -36,8 +36,6 @@
 //=============================================================================
 // DEBUG MODE
 //=============================================================================
-// Win32 compilers use _DEBUG for specifying debug builds.
-// for MinGW, we set DEBUG
 #if defined(_DEBUG) || defined(DEBUG)
 #	undef  SE_DEBUG
 #	define SE_DEBUG 1

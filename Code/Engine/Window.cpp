@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Window.h"
 #include "Error.h"
+#include "Log.h"
 //-----------------------------------------------------------------------------
 #if SE_PLATFORM_WINDOWS
 constexpr LPCWSTR WINDOW_CLASS_NAME = L"SapphireWindow";
@@ -26,18 +27,21 @@ Window::Window(WindowConfig &config)
 
 	// Register class
 	WNDCLASSEX wc;
-	wc.cbSize = sizeof(wc);
-	wc.style = CS_HREDRAW | CS_VREDRAW;
-	wc.lpfnWndProc = windowProc;
-	wc.cbClsExtra = 0;
-	wc.cbWndExtra = 0;
-	wc.hInstance = m_native.instance;
-	wc.hIcon = LoadIcon(m_native.instance, MAKEINTRESOURCEW(101));
-	wc.hCursor = LoadCursor(nullptr, IDC_ARROW);
-	wc.hbrBackground = nullptr;
-	wc.lpszMenuName = nullptr;
-	wc.lpszClassName = WINDOW_CLASS_NAME;
-	wc.hIconSm = nullptr;
+	{
+		wc.cbSize = sizeof(wc);
+		wc.style = CS_HREDRAW | CS_VREDRAW;
+		wc.lpfnWndProc = windowProc;
+		wc.cbClsExtra = 0;
+		wc.cbWndExtra = 0;
+		wc.hInstance = m_native.instance;
+		wc.hIcon = LoadIcon(m_native.instance, MAKEINTRESOURCEW(101));
+		wc.hCursor = LoadCursor(nullptr, IDC_ARROW);
+		wc.hbrBackground = nullptr;
+		wc.lpszMenuName = nullptr;
+		wc.lpszClassName = WINDOW_CLASS_NAME;
+		wc.hIconSm = nullptr;
+	}
+	
 	m_windowClass = RegisterClassEx(&wc);
 	if (!m_windowClass)
 	{
@@ -101,13 +105,10 @@ Window::Window(WindowConfig &config)
 	m_config.width = static_cast<uint32_t>(windowRect.right - windowRect.left);
 	m_config.height = static_cast<uint32_t>(windowRect.bottom - windowRect.top);
 
-	//if (!RegisterTouchWindow(m_native.hwnd, 0))
-	//	Log("Failed to enable touch for window");
-
 	ShowWindow(m_native.hwnd, SW_SHOW);
+	UpdateWindow(m_native.hwnd);
 
 	SetLastError(ERROR_SUCCESS);
-
 #endif
 
 	setValid(true);
@@ -126,6 +127,7 @@ Window::~Window()
 //-----------------------------------------------------------------------------
 bool Window::Update()
 {
+	m_isResize = false;
 #if SE_PLATFORM_WINDOWS
 	if (PeekMessage(&m_message, nullptr, 0, 0, PM_REMOVE))
 	{
@@ -190,6 +192,22 @@ void Window::switchFullscreen(bool newFullscreen)
 			return;
 		}
 	}
+#endif
+}
+//-----------------------------------------------------------------------------
+void Window::resize()
+{
+#if SE_PLATFORM_WINDOWS
+	RECT windowRect = { 0,0,0,0 };
+	if (!GetClientRect(m_native.hwnd, &windowRect))
+	{
+		CriticalErrorExit("Failed to get client rectangle");
+		return;
+	}
+
+	m_config.width = static_cast<uint32_t>(windowRect.right - windowRect.left);
+	m_config.height = static_cast<uint32_t>(windowRect.bottom - windowRect.top);
+	m_isResize = true;
 #endif
 }
 //-----------------------------------------------------------------------------

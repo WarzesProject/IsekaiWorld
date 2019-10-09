@@ -30,6 +30,10 @@ bool Application::init(const Configuration &config)
 {
 	m_impl->config = config;
 
+#if SE_DEBUG && SE_PLATFORM_WINDOWS
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+#endif
+
 	if (!initSubsystem())
 		return false;
 

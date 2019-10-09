@@ -50,6 +50,5 @@
 
 //-----------------------------------------------------------------------------
 // Other Engine Header
-#include "D3D11Core.h" // TODO: удалить
 
 #pragma warning(pop)
