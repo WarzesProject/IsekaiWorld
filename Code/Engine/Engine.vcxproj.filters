@@ -197,6 +197,9 @@
     <ClInclude Include="Offset3D.h">
       <Filter>Math</Filter>
     </ClInclude>
+    <ClInclude Include="NonCopyable.h">
+      <Filter>Core\Template</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Core">

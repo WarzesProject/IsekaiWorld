@@ -13,3 +13,13 @@ struct Extent3D
 
 Extent3D operator+(const Extent3D &lhs, const Extent3D &rhs);
 Extent3D operator-(const Extent3D &lhs, const Extent3D &rhs);
+
+inline bool operator==(const Extent3D &lhs, const Extent3D &rhs)
+{
+	return (lhs.width == rhs.width && lhs.height == rhs.height && lhs.depth == rhs.depth);
+}
+
+inline bool operator!=(const Extent3D &lhs, const Extent3D &rhs)
+{
+	return !(lhs == rhs);
+}

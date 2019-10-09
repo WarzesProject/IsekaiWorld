@@ -190,6 +190,7 @@
     <ClInclude Include="Log.h" />
     <ClInclude Include="LogConfig.h" />
     <ClInclude Include="Macros.h" />
+    <ClInclude Include="NonCopyable.h" />
     <ClInclude Include="Offset2D.h" />
     <ClInclude Include="Offset3D.h" />
     <ClInclude Include="RenderConfig.h" />

@@ -14,4 +14,12 @@ struct Offset3D
 Offset3D operator+(const Offset3D &lhs, const Offset3D &rhs);
 Offset3D operator-(const Offset3D &lhs, const Offset3D &rhs);
 
-...llgl..
+inline bool operator==(const Offset3D &lhs, const Offset3D &rhs)
+{
+	return (lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z);
+}
+
+inline bool operator!=(const Offset3D &lhs, const Offset3D &rhs)
+{
+	return !(lhs == rhs);
+}

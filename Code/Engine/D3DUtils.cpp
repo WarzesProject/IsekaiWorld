@@ -2,6 +2,7 @@
 #include "D3DUtils.h"
 #include "StringUtils.h"
 #include "Error.h"
+#include "D3DVendor.h"
 
 #if SE_ENABLE_DIRECT3D11
 //-----------------------------------------------------------------------------

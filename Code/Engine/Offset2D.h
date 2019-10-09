@@ -12,3 +12,13 @@ struct Offset2D
 
 Offset2D operator+(const Offset2D &lhs, const Offset2D &rhs);
 Offset2D operator-(const Offset2D &lhs, const Offset2D &rhs);
+
+inline bool operator==(const Offset2D &lhs, const Offset2D &rhs)
+{
+	return (lhs.x == rhs.x && lhs.y == rhs.y);
+}
+
+inline bool operator!=(const Offset2D &lhs, const Offset2D &rhs)
+{
+	return !(lhs == rhs);
+}

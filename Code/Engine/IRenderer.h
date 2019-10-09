@@ -1,7 +1,6 @@
 #pragma once
 
 #include "RenderConfig.h"
-#include "RenderTypes.h"
 
 class SE_NO_VTABLE IRenderer
 {

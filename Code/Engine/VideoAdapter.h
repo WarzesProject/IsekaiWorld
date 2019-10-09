@@ -11,6 +11,6 @@ struct VideoAdapterDescriptor
 {
 	std::wstring name;
 	std::string vendor;
-	std::uint64_t videoMemory = 0;
+	uint64_t videoMemory = 0;
 	std::vector<VideoOutputDescriptor>  outputs;
 };

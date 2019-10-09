@@ -13,7 +13,7 @@ bool D3D11RenderDevice::Init(RenderConfig &config)
 
 	createDevice();
 
-	return false;
+	return true;
 }
 //-----------------------------------------------------------------------------
 void D3D11RenderDevice::Close()
@@ -61,7 +61,6 @@ void D3D11RenderDevice::createDevice()
 
 	DXThrowIfCreateFailed(hr, "ID3D11Device");
 
-	/* Try to get an extended D3D11 device */
 #if SE_D3D11_ENABLE_FEATURELEVEL >= 3
 	hr = device_->QueryInterface(IID_PPV_ARGS(&device3_));
 	if (FAILED(hr))
