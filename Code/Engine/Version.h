@@ -1,1 +1,6 @@
 #pragma once
+
+#define SE_VERSION_MAJOR      0
+#define SE_VERSION_MINOR      0
+#define SE_VERSION_REVISION   0
+#define SE_VERSION_ID         (SE_VERSION_MAJOR * 100000 + SE_VERSION_MINOR * 100 + SE_VERSION_REVISION)

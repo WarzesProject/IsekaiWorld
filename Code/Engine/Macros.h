@@ -13,7 +13,7 @@ namespace SE_NAMESPACE {}
 //=============================================================================
 #if SE_COMPILER_MSVC
 #	define SE_FORCE_INLINE __forceinline
-#	define SE_NO_VTABLE __declspec(novtable)
+#	define SE_NO_VTABLE __declspec(novtable)	// https://habr.com/ru/post/442340/
 #endif
 
 //=============================================================================

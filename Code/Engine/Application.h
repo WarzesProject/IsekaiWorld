@@ -18,15 +18,17 @@ public:
 				bool isExit = false;
 
 				while (!isExit)
-				{					
-					// Render Draw
-					isExit = (isExit || !engineApp.beginFrame());
-					isExit = (isExit || !userApp.Frame());
-					isExit = (isExit || !engineApp.endFrame());
+				{
+					engineApp.deltaTime();
 
 					// Event Update
 					isExit = (isExit || !engineApp.update());
 					isExit = (isExit || !userApp.Update());
+
+					// Render Draw
+					isExit = (isExit || !engineApp.beginFrame());
+					isExit = (isExit || !userApp.Frame());
+					isExit = (isExit || !engineApp.endFrame());
 				}
 
 				userApp.Close();
@@ -43,9 +45,10 @@ private:
 
 	bool init(const Configuration &config);
 	bool initSubsystem();
+	void deltaTime();
 	bool beginFrame();
 	bool endFrame();
-	bool update();
+	bool update();	
 	void close();
 
 	struct AppPimpl *m_impl = nullptr;

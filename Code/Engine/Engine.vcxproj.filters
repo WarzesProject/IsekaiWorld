@@ -38,11 +38,14 @@
     <ClCompile Include="RenderSystem.cpp">
       <Filter>Render</Filter>
     </ClCompile>
-    <ClCompile Include="D3D11RenderDevice.cpp">
-      <Filter>Render\D3D11</Filter>
-    </ClCompile>
     <ClCompile Include="D3DUtils.cpp">
-      <Filter>Render\D3DCore</Filter>
+      <Filter>Render\GAPI\D3DCore</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Core\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="D3D11Renderer.cpp">
+      <Filter>Render\GAPI\D3D11\Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -116,23 +119,23 @@
     <ClInclude Include="RenderSystem.h">
       <Filter>Render</Filter>
     </ClInclude>
-    <ClInclude Include="RenderConfig.h">
-      <Filter>Render</Filter>
-    </ClInclude>
-    <ClInclude Include="IRenderDevice.h">
-      <Filter>Render</Filter>
-    </ClInclude>
-    <ClInclude Include="D3D11RenderDevice.h">
-      <Filter>Render\D3D11</Filter>
-    </ClInclude>
-    <ClInclude Include="D3D11Core.h">
-      <Filter>Render\D3D11</Filter>
-    </ClInclude>
     <ClInclude Include="D3DUtils.h">
-      <Filter>Render\D3DCore</Filter>
+      <Filter>Render\GAPI\D3DCore</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Core\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderConfig.h">
+      <Filter>Render\Core</Filter>
     </ClInclude>
     <ClInclude Include="RenderTypes.h">
-      <Filter>Render</Filter>
+      <Filter>Render\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="IRenderer.h">
+      <Filter>Render\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D3D11Renderer.h">
+      <Filter>Render\GAPI\D3D11\Core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -169,11 +172,23 @@
     <Filter Include="Render">
       <UniqueIdentifier>{4c525c92-dc44-4e8a-a2f7-c92c951a71cd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Render\D3D11">
+    <Filter Include="Core\Utility">
+      <UniqueIdentifier>{aa586ed0-f7b3-41ea-806d-4627e4ad9bef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render\GAPI">
+      <UniqueIdentifier>{2c4f3f17-c47f-4a93-b939-41f92bdedba9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render\GAPI\D3DCore">
+      <UniqueIdentifier>{2d169e5d-42f7-4ce9-bcba-9927f4b4da9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render\GAPI\D3D11">
       <UniqueIdentifier>{43cc3530-3cec-4521-b751-e3253bc35223}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Render\D3DCore">
-      <UniqueIdentifier>{2d169e5d-42f7-4ce9-bcba-9927f4b4da9b}</UniqueIdentifier>
+    <Filter Include="Render\Core">
+      <UniqueIdentifier>{a943c4c0-7ef3-47c8-b593-0a449baebbbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render\GAPI\D3D11\Core">
+      <UniqueIdentifier>{8a619976-b034-4763-a4da-a9383060431d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

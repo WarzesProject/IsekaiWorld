@@ -3,10 +3,10 @@
 #include "RenderConfig.h"
 #include "RenderTypes.h"
 
-SE_NO_VTABLE class IRenderDevice
+class SE_NO_VTABLE IRenderer
 {
 public:
-	virtual ~IRenderDevice() = default;
+	virtual ~IRenderer() = default;
 
 	virtual bool Create(RenderConfig &config) = 0;
 	virtual void Destroy() = 0;

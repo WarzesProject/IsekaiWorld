@@ -22,10 +22,10 @@ RenderSystem::RenderSystem(RenderConfig &config)
 {
 #if SE_ENABLE_DIRECT3D11
 	if (m_config.gapi == RenderBackend::Direct3D11)
-		m_device = new D3D11RenderDevice();
+		m_renderer = new D3D11Renderer();
 #endif
 
-	if (!m_device || !m_device->Create(m_config))
+	if (!m_renderer || !m_renderer->Create(m_config))
 		return;
 
 	logRenderBackend(m_config.gapi);
@@ -35,19 +35,19 @@ RenderSystem::RenderSystem(RenderConfig &config)
 //-----------------------------------------------------------------------------
 RenderSystem::~RenderSystem()
 {
-	SafeDelete(m_device);
+	SafeDelete(m_renderer);
 }
 //-----------------------------------------------------------------------------
 bool RenderSystem::BeginFrame()
 {
-	if (!m_device->BeginFrame())
+	if (!m_renderer->BeginFrame())
 		return false;
 	return true;
 }
 //-----------------------------------------------------------------------------
 bool RenderSystem::EndFrame()
 {
-	if (!m_device->EndFrame())
+	if (!m_renderer->EndFrame())
 		return false;
 	return true;
 }

@@ -12,8 +12,8 @@
 #include <string_view>
 #include <vector>
 #include <iostream>
-#include <functional>
 #include <memory>
+#include <chrono>
 
 //-----------------------------------------------------------------------------
 // Platform Header

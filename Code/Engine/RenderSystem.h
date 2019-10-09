@@ -3,7 +3,7 @@
 #include "Subsystem.h"
 #include "RenderConfig.h"
 
-class IRenderDevice;
+class IRenderer;
 
 class RenderSystem : public Subsystem<RenderSystem>
 {
@@ -14,10 +14,10 @@ public:
 	bool BeginFrame();
 	bool EndFrame();
 
-	IRenderDevice* GetRenderDevice() const { return m_device; }
+	IRenderer* GetRenderer() const { return m_renderer; }
 
 private:
 	RenderConfig &m_config;
 
-	IRenderDevice *m_device = nullptr;
+	IRenderer *m_renderer = nullptr;
 };

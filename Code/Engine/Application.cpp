@@ -7,10 +7,15 @@
 #include "Window.h"
 #include "Input.h"
 #include "RenderSystem.h"
+#include "Timer.h"
 //-----------------------------------------------------------------------------
 struct AppPimpl
 {
 	Configuration config;
+	Timer timer;
+	double prevTimer;
+	double currentTimer;
+	double elapsedTime;
 	bool activeUpdate = true;
 	bool activeBeginFrame = true;
 	bool activeEndFrame = true;
@@ -37,6 +42,8 @@ bool Application::init(const Configuration &config)
 	if (!initSubsystem())
 		return false;
 
+	m_impl->prevTimer = m_impl->timer.GetElapsedTime();
+
 	return true;
 }
 //-----------------------------------------------------------------------------
@@ -59,8 +66,14 @@ bool Application::initSubsystem()
 	SE_INIT_SUBSYSTEM(RenderSystem::Create(config.render));
 
 #undef SE_INIT_SUBSYSTEM
-
 	return !isError;
+}
+//-----------------------------------------------------------------------------
+void Application::deltaTime()
+{
+	m_impl->currentTimer = m_impl->timer.GetElapsedTime();
+	m_impl->elapsedTime = m_impl->currentTimer - m_impl->prevTimer;
+	m_impl->prevTimer = m_impl->currentTimer;
 }
 //-----------------------------------------------------------------------------
 bool Application::beginFrame()
