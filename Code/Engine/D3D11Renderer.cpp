@@ -15,12 +15,15 @@ D3D11Renderer::~D3D11Renderer()
 //-----------------------------------------------------------------------------
 bool D3D11Renderer::Create(RenderConfig &config)
 {
+	if (!m_device.Init(config))
+		return false;
+
 	return true;
 }
 //-----------------------------------------------------------------------------
 void D3D11Renderer::Destroy()
 {
-
+	m_device.Close();
 }
 //-----------------------------------------------------------------------------
 bool D3D11Renderer::BeginFrame()

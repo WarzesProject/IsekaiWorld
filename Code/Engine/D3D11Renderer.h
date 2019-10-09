@@ -1,7 +1,7 @@
 #pragma once
 
 #include "IRenderer.h"
-#include "D3DUtils.h"
+#include "D3D11RenderDevice.h"
 
 #if SE_ENABLE_DIRECT3D11
 
@@ -16,6 +16,9 @@ public:
 
 	bool BeginFrame() final;
 	bool EndFrame() final;
+
+private:
+	D3D11RenderDevice m_device;
 };
 
 #endif

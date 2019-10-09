@@ -174,8 +174,10 @@
     <ClInclude Include="Args.h" />
     <ClInclude Include="BaseHeader.h" />
     <ClInclude Include="Console.h" />
+    <ClInclude Include="D3D11RenderDevice.h" />
     <ClInclude Include="D3D11Renderer.h" />
     <ClInclude Include="D3DUtils.h" />
+    <ClInclude Include="DisplayFlags.h" />
     <ClInclude Include="EngineConfig.h" />
     <ClInclude Include="Error.h" />
     <ClInclude Include="InlineFunc.h" />
@@ -187,6 +189,7 @@
     <ClInclude Include="RenderConfig.h" />
     <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="RenderTypes.h" />
+    <ClInclude Include="StringUtils.h" />
     <ClInclude Include="Subsystem.h" />
     <ClInclude Include="OSPlatformUtils.h" />
     <ClInclude Include="Platform.h" />
@@ -196,6 +199,7 @@
     <ClInclude Include="SystemInfo.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Version.h" />
+    <ClInclude Include="VideoAdapter.h" />
     <ClInclude Include="Window.h" />
     <ClInclude Include="WindowConfig.h" />
     <ClInclude Include="WindowNativeData.h" />
@@ -204,8 +208,10 @@
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Args.cpp" />
     <ClCompile Include="Console.cpp" />
+    <ClCompile Include="D3D11RenderDevice.cpp" />
     <ClCompile Include="D3D11Renderer.cpp" />
     <ClCompile Include="D3DUtils.cpp" />
+    <ClCompile Include="DisplayFlags.cpp" />
     <ClCompile Include="Error.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Log.cpp" />
@@ -217,6 +223,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="StringUtils.cpp" />
     <ClCompile Include="SystemInfo.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Window.cpp" />

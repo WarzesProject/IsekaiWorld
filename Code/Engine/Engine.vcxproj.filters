@@ -47,6 +47,15 @@
     <ClCompile Include="D3D11Renderer.cpp">
       <Filter>Render\GAPI\D3D11\Core</Filter>
     </ClCompile>
+    <ClCompile Include="D3D11RenderDevice.cpp">
+      <Filter>Render\GAPI\D3D11\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="StringUtils.cpp">
+      <Filter>Core\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="DisplayFlags.cpp">
+      <Filter>Render\Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -136,6 +145,18 @@
     </ClInclude>
     <ClInclude Include="D3D11Renderer.h">
       <Filter>Render\GAPI\D3D11\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D3D11RenderDevice.h">
+      <Filter>Render\GAPI\D3D11\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="StringUtils.h">
+      <Filter>Core\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoAdapter.h">
+      <Filter>Render\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="DisplayFlags.h">
+      <Filter>Render\Core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

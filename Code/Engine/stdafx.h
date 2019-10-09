@@ -12,8 +12,11 @@
 #include <string_view>
 #include <vector>
 #include <iostream>
+#include <iomanip>
+#include <sstream>
 #include <memory>
 #include <chrono>
+#include <algorithm>
 
 //-----------------------------------------------------------------------------
 // Platform Header
