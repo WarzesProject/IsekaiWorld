@@ -35,14 +35,14 @@
     <ClCompile Include="WindowWindowProc.cpp">
       <Filter>Core\PlatformSpecific\Window</Filter>
     </ClCompile>
-    <ClCompile Include="RenderSystem.cpp">
-      <Filter>Render</Filter>
-    </ClCompile>
     <ClCompile Include="D3DUtils.cpp">
       <Filter>Render\GAPI\D3DCore</Filter>
     </ClCompile>
     <ClCompile Include="Timer.cpp">
       <Filter>Core\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderSystem.cpp">
+      <Filter>Render\Core</Filter>
     </ClCompile>
     <ClCompile Include="D3D11Renderer.cpp">
       <Filter>Render\GAPI\D3D11\Core</Filter>
@@ -116,9 +116,6 @@
     <ClInclude Include="Configuration.h">
       <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="RenderSystem.h">
-      <Filter>Render</Filter>
-    </ClInclude>
     <ClInclude Include="D3DUtils.h">
       <Filter>Render\GAPI\D3DCore</Filter>
     </ClInclude>
@@ -132,6 +129,9 @@
       <Filter>Render\Core</Filter>
     </ClInclude>
     <ClInclude Include="IRenderer.h">
+      <Filter>Render\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderSystem.h">
       <Filter>Render\Core</Filter>
     </ClInclude>
     <ClInclude Include="D3D11Renderer.h">

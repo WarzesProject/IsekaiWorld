@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "D3D11RenderDevice.h"
+#include "D3D11Renderer.h"
 
 #if SE_ENABLE_DIRECT3D11
 //-----------------------------------------------------------------------------

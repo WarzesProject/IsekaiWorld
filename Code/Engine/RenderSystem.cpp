@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "RenderSystem.h"
-#include "D3D11RenderDevice.h"
+#include "D3D11Renderer.h"
 #include "Log.h"
 //-----------------------------------------------------------------------------
 inline void logRenderBackend(RenderBackend backend)
