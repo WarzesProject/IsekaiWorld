@@ -7,10 +7,29 @@
 template <typename T>
 using ComPtr = Microsoft::WRL::ComPtr<T>;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 void DXThrowIfFailed(const HRESULT hr, const char *info);
 void DXThrowIfCreateFailed(const HRESULT hr, const char *interfaceName, const char *contextInfo = nullptr);
 
-std::string GetVendorByID(unsigned short id);
+
 
 VideoAdapterDescriptor DXGetVideoAdapterDesc(IDXGIAdapter *adapter);
 

@@ -56,6 +56,27 @@
     <ClCompile Include="DisplayFlags.cpp">
       <Filter>Render\Core</Filter>
     </ClCompile>
+    <ClCompile Include="RenderUtils.cpp">
+      <Filter>Render\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D3DVendor.cpp">
+      <Filter>Render\GAPI\D3DCore</Filter>
+    </ClCompile>
+    <ClCompile Include="Extent2D.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreMath.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Extent3D.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Offset2D.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Offset3D.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -134,9 +155,6 @@
     <ClInclude Include="RenderConfig.h">
       <Filter>Render\Core</Filter>
     </ClInclude>
-    <ClInclude Include="RenderTypes.h">
-      <Filter>Render\Core</Filter>
-    </ClInclude>
     <ClInclude Include="IRenderer.h">
       <Filter>Render\Core</Filter>
     </ClInclude>
@@ -157,6 +175,27 @@
     </ClInclude>
     <ClInclude Include="DisplayFlags.h">
       <Filter>Render\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderUtils.h">
+      <Filter>Render\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D3DVendor.h">
+      <Filter>Render\GAPI\D3DCore</Filter>
+    </ClInclude>
+    <ClInclude Include="Extent2D.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreMath.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Extent3D.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Offset2D.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Offset3D.h">
+      <Filter>Math</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -210,6 +249,9 @@
     </Filter>
     <Filter Include="Render\GAPI\D3D11\Core">
       <UniqueIdentifier>{8a619976-b034-4763-a4da-a9383060431d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{40be18a1-d29e-42df-b0e6-76b27eec2865}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
