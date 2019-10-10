@@ -268,5 +268,8 @@
     <Filter Include="Render\GAPI\D3D11\Render State">
       <UniqueIdentifier>{0e9aac27-a240-488f-9b50-995952694abb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="_TEMP">
+      <UniqueIdentifier>{5b5948d5-81de-40a1-af09-ec83713522b2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
