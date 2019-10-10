@@ -140,7 +140,7 @@ bool Window::Update()
 	return true;
 }
 //-----------------------------------------------------------------------------
-const WindowNativeData& Window::GetNative() const
+const WindowNativeHandle& Window::GetNative() const
 {
 	return m_native;
 }

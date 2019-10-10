@@ -77,6 +77,9 @@
     <ClCompile Include="Offset3D.cpp">
       <Filter>Math</Filter>
     </ClCompile>
+    <ClCompile Include="D3D11CommandContext.cpp">
+      <Filter>Render\GAPI\D3D11\Render State</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -129,9 +132,6 @@
       <Filter>Core\PlatformSpecific</Filter>
     </ClInclude>
     <ClInclude Include="Window.h">
-      <Filter>Core\PlatformSpecific\Window</Filter>
-    </ClInclude>
-    <ClInclude Include="WindowNativeData.h">
       <Filter>Core\PlatformSpecific\Window</Filter>
     </ClInclude>
     <ClInclude Include="Input.h">
@@ -200,6 +200,15 @@
     <ClInclude Include="NonCopyable.h">
       <Filter>Core\Template</Filter>
     </ClInclude>
+    <ClInclude Include="WindowNativeHandle.h">
+      <Filter>Core\PlatformSpecific\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="PlatormWin32.h">
+      <Filter>Core\Base\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="D3D11CommandContext.h">
+      <Filter>Render\GAPI\D3D11\Render State</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Core">
@@ -255,6 +264,9 @@
     </Filter>
     <Filter Include="Math">
       <UniqueIdentifier>{40be18a1-d29e-42df-b0e6-76b27eec2865}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render\GAPI\D3D11\Render State">
+      <UniqueIdentifier>{0e9aac27-a240-488f-9b50-995952694abb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

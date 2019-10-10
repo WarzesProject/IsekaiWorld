@@ -5,14 +5,14 @@
 //-----------------------------------------------------------------------------
 bool D3D11RenderDevice::Init(RenderConfig &config)
 {
+	TODO("сделать проверки на ошибки более точными");
+
 	if (!createFactory())
 		return false;
-
-	TODO("сделать проверки на ошибки более точными");
 	queryVideoAdapters();
-
 	createDevice();
-
+	
+	createStateManagerAndCommandQueue();
 	return true;
 }
 //-----------------------------------------------------------------------------
@@ -41,14 +41,7 @@ void D3D11RenderDevice::queryVideoAdapters()
 //-----------------------------------------------------------------------------
 void D3D11RenderDevice::createDevice()
 {
-	/* Find list of feature levels to select from, and statically determine maximal feature level */
-	auto featureLevels = DXGetFeatureLevels(
-#if SE_D3D11_ENABLE_FEATURELEVEL >= 1
-		D3D_FEATURE_LEVEL_11_1
-#else
-		D3D_FEATURE_LEVEL_11_0
-#endif
-	);
+	auto featureLevels = DXGetFeatureLevels(D3D_FEATURE_LEVEL_11_0);
 
 	HRESULT hr = 0;
 
@@ -60,22 +53,6 @@ void D3D11RenderDevice::createDevice()
 #endif
 
 	DXThrowIfCreateFailed(hr, "ID3D11Device");
-
-#if SE_D3D11_ENABLE_FEATURELEVEL >= 3
-	hr = device_->QueryInterface(IID_PPV_ARGS(&device3_));
-	if (FAILED(hr))
-#endif
-	{
-#if SE_D3D11_ENABLE_FEATURELEVEL >= 2
-		hr = device_->QueryInterface(IID_PPV_ARGS(&device2_));
-		if (FAILED(hr))
-#endif
-		{
-#if SE_D3D11_ENABLE_FEATURELEVEL >= 1
-			device_->QueryInterface(IID_PPV_ARGS(&device1_));
-#endif
-		}
-	}
 }
 //-----------------------------------------------------------------------------
 bool D3D11RenderDevice::createDeviceWithFlags(IDXGIAdapter *adapter, const std::vector<D3D_FEATURE_LEVEL> &featureLevels, UINT flags, HRESULT &hr)
@@ -98,6 +75,10 @@ bool D3D11RenderDevice::createDeviceWithFlags(IDXGIAdapter *adapter, const std::
 			return true;
 	}
 	return false;
+}
+//-----------------------------------------------------------------------------
+void D3D11RenderDevice::createStateManagerAndCommandQueue()
+{
 }
 //-----------------------------------------------------------------------------
 #endif

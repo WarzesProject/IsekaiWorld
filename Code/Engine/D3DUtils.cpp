@@ -158,8 +158,8 @@ VideoAdapterDescriptor DXGetVideoAdapterDesc(IDXGIAdapter *adapter)
 		{
 			DisplayModeDescriptor displayMode;
 			{
-				displayMode.width = modeDesc[i].Width;
-				displayMode.height = modeDesc[i].Height;
+				displayMode.resolution.width = modeDesc[i].Width;
+				displayMode.resolution.height = modeDesc[i].Height;
 				displayMode.refreshRate = (modeDesc[i].RefreshRate.Denominator > 0 ? modeDesc[i].RefreshRate.Numerator / modeDesc[i].RefreshRate.Denominator : 0);
 			}
 			videoOutput.displayModes.push_back(displayMode);

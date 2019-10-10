@@ -2,7 +2,7 @@
 
 #include "Subsystem.h"
 #include "WindowConfig.h"
-#include "WindowNativeData.h"
+#include "WindowNativeHandle.h"
 
 class Window : public Subsystem<Window>
 {
@@ -20,7 +20,7 @@ public:
 	uint16_t GetHeight() const { return m_config.height; }
 	bool IsResize() const { return m_isResize; }
 
-	const WindowNativeData& GetNative() const;
+	const WindowNativeHandle& GetNative() const;
 	
 private:
 	void switchFullscreen(bool newFullscreen);
@@ -28,7 +28,7 @@ private:
 	void resize();
 
 	WindowConfig &m_config;
-	WindowNativeData m_native;
+	WindowNativeHandle m_native;
 
 #if SE_PLATFORM_WINDOWS
 	ATOM m_windowClass = 0;	

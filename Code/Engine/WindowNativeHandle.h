@@ -1,6 +1,6 @@
 #pragma once
 
-struct WindowNativeData
+struct WindowNativeHandle
 {
 #if SE_PLATFORM_WINDOWS
 	HINSTANCE instance = nullptr;
