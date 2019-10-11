@@ -22,7 +22,6 @@ private:
 	ComPtr<ID3D11Device> m_device;
 	ComPtr<ID3D11DeviceContext> m_context;
 	D3D_FEATURE_LEVEL m_featureLevel = D3D_FEATURE_LEVEL_10_0;
-	std::shared_ptr<D3D11StateManager> m_stateMngr;
 
 	std::vector<VideoAdapterDescriptor> m_videoAdapterDescs;
 };

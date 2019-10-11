@@ -1,8 +1,8 @@
 #include "stdafx.h"
-#include "OSPlatformUtils.h"
+#include "OSPlatform.h"
 #include "Error.h"
 //-----------------------------------------------------------------------------
-OSPlatformUtils::OSPlatformUtils()
+OSPlatform::OSPlatform()
 {
 #if SE_COMPILER_MSVC
 //	HRESULT hr;
@@ -16,7 +16,7 @@ OSPlatformUtils::OSPlatformUtils()
 	setValid(true);
 }
 //-----------------------------------------------------------------------------
-void OSPlatformUtils::PrintDebugOutput(std::string_view str)
+void OSPlatform::PrintDebugOutput(std::string_view str)
 {
 #if SE_COMPILER_MSVC && SE_DEBUG
 	OutputDebugStringA(str.data());
@@ -26,7 +26,7 @@ void OSPlatformUtils::PrintDebugOutput(std::string_view str)
 #endif
 }
 //-----------------------------------------------------------------------------
-void OSPlatformUtils::SetCurrentThreadName(std::string_view name)
+void OSPlatform::SetCurrentThreadName(std::string_view name)
 {
 //#if SE_COMPILER_MSVC
 //	constexpr DWORD MS_VC_EXCEPTION = 0x406D1388;

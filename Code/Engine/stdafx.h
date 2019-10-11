@@ -11,6 +11,8 @@
 #include <string>
 #include <string_view>
 #include <vector>
+#include <forward_list>
+
 #include <iostream>
 #include <iomanip>
 #include <sstream>

@@ -2,10 +2,10 @@
 
 #include "Subsystem.h"
 
-class OSPlatformUtils : public Subsystem<OSPlatformUtils>
+class OSPlatform : public Subsystem<OSPlatform>
 {
 public:
-	OSPlatformUtils();
+	OSPlatform();
 
 	void PrintDebugOutput(std::string_view str);
 	

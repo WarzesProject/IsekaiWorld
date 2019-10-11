@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Log.h"
 #include "Console.h"
-#include "OSPlatformUtils.h"
+#include "OSPlatform.h"
 //-----------------------------------------------------------------------------
 Log::Log(LogConfig &config)
 	: m_config(config)
@@ -50,9 +50,9 @@ void Log::print(LogType type, std::string_view str)
 		console.Print(str);
 	}		
 
-	if (OSPlatformUtils::IsValid() && m_config.PrintDebugOutput)
+	if (OSPlatform::IsValid() && m_config.PrintDebugOutput)
 	{
-		static auto &osPlatform = GetSubsystem<OSPlatformUtils>();
+		static auto &osPlatform = GetSubsystem<OSPlatform>();
 		osPlatform.PrintDebugOutput(str);
 	}		
 

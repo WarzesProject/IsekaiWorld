@@ -198,9 +198,10 @@
     <ClInclude Include="RenderConfig.h" />
     <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="RenderUtils.h" />
+    <ClInclude Include="SignalAndSlot.h" />
     <ClInclude Include="StringUtils.h" />
     <ClInclude Include="Subsystem.h" />
-    <ClInclude Include="OSPlatformUtils.h" />
+    <ClInclude Include="OSPlatform.h" />
     <ClInclude Include="Platform.h" />
     <ClInclude Include="PlatformCompiler.h" />
     <ClInclude Include="PlatformOS.h" />
@@ -231,7 +232,7 @@
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="Offset2D.cpp" />
     <ClCompile Include="Offset3D.cpp" />
-    <ClCompile Include="OSPlatformUtils.cpp" />
+    <ClCompile Include="OSPlatform.cpp" />
     <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="RenderUtils.cpp" />
     <ClCompile Include="stdafx.cpp">

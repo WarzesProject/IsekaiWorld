@@ -1,5 +1,8 @@
 #include "EngineHeader.h"
 #include <Windows.h>
+#include "temp.h"
+
+
 
 //-----------------------------------------------------------------------------
 class GameApp
@@ -17,7 +20,12 @@ int WINAPI wWinMain(
 	[[maybe_unused]] _In_ LPWSTR lpCmdLine,
 	[[maybe_unused]] _In_ int nCmdShow)
 {
+#if RUN_TEMP
+	Start();
+	return 0;
+#else
 	Configuration config;
 	return Application::Run<GameApp>(config);
+#endif
 }
 //-----------------------------------------------------------------------------

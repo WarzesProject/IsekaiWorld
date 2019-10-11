@@ -3,7 +3,7 @@
 #include "Args.h"
 #include "Console.h"
 #include "Log.h"
-#include "OSPlatformUtils.h"
+#include "OSPlatform.h"
 #include "Window.h"
 #include "Input.h"
 #include "RenderSystem.h"
@@ -60,7 +60,7 @@ bool Application::initSubsystem()
 		SE_INIT_SUBSYSTEM(Console::Create());
 
 	SE_INIT_SUBSYSTEM(Log::Create(config.log));
-	SE_INIT_SUBSYSTEM(OSPlatformUtils::Create());
+	SE_INIT_SUBSYSTEM(OSPlatform::Create());
 	SE_INIT_SUBSYSTEM(Window::Create(config.window));
 	SE_INIT_SUBSYSTEM(Input::Create());
 	SE_INIT_SUBSYSTEM(RenderSystem::Create(config.render));
@@ -135,7 +135,7 @@ void Application::close()
 	RenderSystem::Destroy();
 	Input::Destroy();
 	Window::Destroy();
-	OSPlatformUtils::Destroy();
+	OSPlatform::Destroy();
 	Log::Destroy();
 	Console::Destroy();
 	Args::Destroy();

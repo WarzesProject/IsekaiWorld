@@ -17,9 +17,6 @@
     <ClCompile Include="Log.cpp">
       <Filter>Core\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="OSPlatformUtils.cpp">
-      <Filter>Core\PlatformSpecific</Filter>
-    </ClCompile>
     <ClCompile Include="SystemInfo.cpp">
       <Filter>Core\PlatformSpecific</Filter>
     </ClCompile>
@@ -80,6 +77,9 @@
     <ClCompile Include="D3D11CommandContext.cpp">
       <Filter>Render\GAPI\D3D11\Render State</Filter>
     </ClCompile>
+    <ClCompile Include="OSPlatform.cpp">
+      <Filter>Core\PlatformSpecific</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -124,9 +124,6 @@
     </ClInclude>
     <ClInclude Include="LogConfig.h">
       <Filter>Core\Debug</Filter>
-    </ClInclude>
-    <ClInclude Include="OSPlatformUtils.h">
-      <Filter>Core\PlatformSpecific</Filter>
     </ClInclude>
     <ClInclude Include="SystemInfo.h">
       <Filter>Core\PlatformSpecific</Filter>
@@ -208,6 +205,12 @@
     </ClInclude>
     <ClInclude Include="D3D11CommandContext.h">
       <Filter>Render\GAPI\D3D11\Render State</Filter>
+    </ClInclude>
+    <ClInclude Include="OSPlatform.h">
+      <Filter>Core\PlatformSpecific</Filter>
+    </ClInclude>
+    <ClInclude Include="SignalAndSlot.h">
+      <Filter>Core\Template</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
