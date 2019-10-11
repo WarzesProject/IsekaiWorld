@@ -6,3 +6,15 @@
 - возможные тайлы для одного прототипа
 	https://opengameart.org/art-search?keys=LPC
 	https://opengameart.org/content/lpc-farming-tilesets-magic-animations-and-ui-elements
+	http://gaurav.munjal.us/Universal-LPC-Spritesheet-Character-Generator/
+
+
+челендж
+
+исходник всего из 2 файлов:
+- init.h - где всякое о старте
+- mainLoop.h - где игра
+- main.cpp - точка входа
+
+SFML
+ресы из rpg maker (или LPC)

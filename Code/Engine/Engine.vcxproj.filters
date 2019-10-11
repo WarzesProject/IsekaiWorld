@@ -80,6 +80,12 @@
     <ClCompile Include="OSPlatform.cpp">
       <Filter>Core\PlatformSpecific</Filter>
     </ClCompile>
+    <ClCompile Include="SmartPtr.cpp">
+      <Filter>Core\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Event.cpp">
+      <Filter>Core\Event</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -212,6 +218,15 @@
     <ClInclude Include="SignalAndSlot.h">
       <Filter>Core\Template</Filter>
     </ClInclude>
+    <ClInclude Include="AutoPtr.h">
+      <Filter>Core\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="SmartPtr.h">
+      <Filter>Core\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Event.h">
+      <Filter>Core\Event</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Core">
@@ -273,6 +288,12 @@
     </Filter>
     <Filter Include="_TEMP">
       <UniqueIdentifier>{5b5948d5-81de-40a1-af09-ec83713522b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Memory">
+      <UniqueIdentifier>{cf8938e7-5aac-4c04-89b1-53c4aa6f63ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Event">
+      <UniqueIdentifier>{fc2c092f-4fa2-43a3-96e1-f1321ae73ad9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
