@@ -6,6 +6,8 @@
 #include <string>
 #include <algorithm>
 
+попробовать сделать событийную систему через наследование
+
 struct foo
 {
 	void f(int i) { std::cout << "foo" << i; }

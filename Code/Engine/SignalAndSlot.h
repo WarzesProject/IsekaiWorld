@@ -13,7 +13,7 @@ namespace _detail
 
 
 	template<class Type, typename ... Args>
-	class MethodSlot final : virtual public BaseSlot<Args...>
+	class MethodSlot final : public BaseSlot<Args...>
 	{
 	public:
 		typedef void(Type::*Func)(Args ...);
@@ -27,7 +27,7 @@ namespace _detail
 	};
 
 	template<class Type, typename ... Args>
-	class SmartMethodSlot final : virtual public BaseSlot<Args...>
+	class SmartMethodSlot final : public BaseSlot<Args...>
 	{
 	public:
 		typedef void(Type::*Func)(Args ...);
