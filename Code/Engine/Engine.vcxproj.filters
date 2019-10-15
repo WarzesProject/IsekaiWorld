@@ -80,12 +80,6 @@
     <ClCompile Include="OSPlatform.cpp">
       <Filter>Core\PlatformSpecific</Filter>
     </ClCompile>
-    <ClCompile Include="SmartPtr.cpp">
-      <Filter>Core\Memory</Filter>
-    </ClCompile>
-    <ClCompile Include="Event.cpp">
-      <Filter>Core\Event</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -217,15 +211,6 @@
     </ClInclude>
     <ClInclude Include="SignalAndSlot.h">
       <Filter>Core\Template</Filter>
-    </ClInclude>
-    <ClInclude Include="AutoPtr.h">
-      <Filter>Core\Memory</Filter>
-    </ClInclude>
-    <ClInclude Include="SmartPtr.h">
-      <Filter>Core\Memory</Filter>
-    </ClInclude>
-    <ClInclude Include="Event.h">
-      <Filter>Core\Event</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
