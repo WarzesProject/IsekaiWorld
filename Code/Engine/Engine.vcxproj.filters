@@ -212,11 +212,11 @@
     <ClInclude Include="OSPlatform.h">
       <Filter>Core\PlatformSpecific</Filter>
     </ClInclude>
-    <ClInclude Include="SignalAndSlot.h">
-      <Filter>Core\Template</Filter>
-    </ClInclude>
     <ClInclude Include="EventTemp.h">
       <Filter>Core\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="SignalAndSlot.h">
+      <Filter>_OLD\Core\Template</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -285,6 +285,15 @@
     </Filter>
     <Filter Include="Core\Event">
       <UniqueIdentifier>{fc2c092f-4fa2-43a3-96e1-f1321ae73ad9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_OLD">
+      <UniqueIdentifier>{a546c7c0-e9b7-4df7-85ea-d4582ff06f8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_OLD\Core">
+      <UniqueIdentifier>{af7c4603-0556-47c5-a74e-dc01f21851de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_OLD\Core\Template">
+      <UniqueIdentifier>{43cf4ee3-7a11-4490-9926-5f3a9e079803}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

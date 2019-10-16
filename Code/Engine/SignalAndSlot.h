@@ -11,7 +11,6 @@ namespace _detail
 		virtual void operator()(Args ...)  = 0;
 	};
 
-
 	template<class Type, typename ... Args>
 	class MethodSlot final : public BaseSlot<Args...>
 	{

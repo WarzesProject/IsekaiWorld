@@ -5,58 +5,19 @@
 #include <string>
 #include <algorithm>
 #include "Engine/EventTemp.h"
+#include "Engine/SignalAndSlot.h"
 
-
-
-
-class FooB : 
-	public EventResizeEventListener, 
-	public EventKeyListener
+class FooB1 : public EventListener//: public EventKeyListener
 {
 public:
-	void Resize(uint32_t w, uint32_t h) final
+	~FooB1() { delete i; i = 0; }
+	void Key(uint32_t key, bool press)// override
 	{
-		std::cout << w << " " << h << std::endl;
-
+		std::cout << "hell1" << key << *i << std::endl;
 	}
 
-	void Key(uint32_t key, bool press) final
-	{
-		if (press)
-			std::cout << key << " down" << std::endl;
-		else
-			std::cout << key << " up" << std::endl;
-	}
+	int *i = new int(10);
 };
-
-
-class FooB1 : public EventKeyListener
-{
-public:
-	void Key(uint32_t key, bool press) override
-	{
-		std::cout << "hell1" << key;
-	}
-};
-
-class FooB2 : public EventKeyListener
-{
-public:
-	void Key(uint32_t key, bool press) override
-	{
-		std::cout << "hell2" << key;
-	}
-};
-
-class FooB3 : public EventKeyListener
-{
-public:
-	void Key(uint32_t key, bool press) override
-	{
-		std::cout << "hell3" << key;
-	}
-};
-
 
 //-----------------------------------------------------------------------------
 class GameApp
@@ -64,44 +25,20 @@ class GameApp
 public:
 	bool Init() 
 	{ 
-		EventSignal<EventKeyListener, uint32_t, bool> sigKey;
-
 		FooB1 *f1 = new FooB1;
-		FooB2 *f2 = new FooB2;
-		FooB3 *f3 = new FooB3;
-
-		sigKey.Connect(f1, &FooB1::Key);
-		sigKey.Connect(f2, &FooB2::Key);
-		sigKey.Connect(f3, &FooB3::Key);
-
-		sigKey(10, true);
 
 
+		//Signal<uint32_t, bool> sig2;
+		//sig2.Connect(*f1, &FooB1::Key);
+		//sig2(10, true);
 
+		EventSignal<uint32_t, bool> sig3;
+		sig3.Connect(f1, &FooB1::Key);
+		sig3(10, true);
+		sig3(20, true);
+		delete f1; f1 = nullptr;
+		sig3(30, true);
 
-
-
-
-
-		/*FooB *fff = new FooB;
-		FooB *fff2 = new FooB;
-		FooB *fff3 = new FooB;
-		
-		std::function<void(uint32_t, uint32_t)> funca = &FooB::Key;
-
-
-
-		EventSignal<EventResizeEventListener, uint32_t, uint32_t> sigResize;
-		EventSignal<EventKeyListener, uint32_t, bool> sigKey;
-		
-		sigResize.Connect(fff, &FooB::Resize);
-		sigKey.Connect(fff, &FooB::Key);
-
-		sigResize(10, 20);
-		sigKey(10, true);
-		delete fff; fff = nullptr;
-		sigResize(40, 50);
-		sigKey(10, false);*/
 
 		return true; 
 	}
