@@ -1,103 +1,62 @@
 #include "EngineHeader.h"
 #include <Windows.h>
-#include "Engine/SignalAndSlot.h"
 #include <iostream>
 #include <functional>
 #include <string>
 #include <algorithm>
+#include "Engine/EventTemp.h"
 
-попробовать сделать событийную систему через наследование
 
-struct foo
+
+
+class FooB : 
+	public EventResizeEventListener, 
+	public EventKeyListener
 {
-	void f(int i) { std::cout << "foo" << i; }
+public:
+	void Resize(uint32_t w, uint32_t h) final
+	{
+		std::cout << w << " " << h << std::endl;
 
-	void f2() { std::cout << "foo2"; }
+	}
+
+	void Key(uint32_t key, bool press) final
+	{
+		if (press)
+			std::cout << key << " down" << std::endl;
+		else
+			std::cout << key << " up" << std::endl;
+	}
 };
 
-foo fb;
 
-std::shared_ptr<foo> fb2(new foo);
-std::weak_ptr<foo> fb3(fb2);
-
-
-
-class EventManager
+class FooB1 : public EventKeyListener
 {
-	struct Observer { virtual ~Observer() {} virtual bool invoke() = 0; };
-
-	typedef std::unique_ptr<Observer> OPtr;
-	typedef std::vector<OPtr> Observers;
 public:
-
-	// Callback observers of "name"
-	// Returns the number of observers so invoked
-	size_t signal(std::string const& name) const
+	void Key(uint32_t key, bool press) override
 	{
-		auto const it = _observers.find(name);
-		if (it == _observers.end()) { return 0; }
-
-		Observers& obs = it->second;
-
-		size_t count = 0;
-		auto invoker = [&count](OPtr const& p) -> bool {
-			bool const invoked = p->invoke();
-			count += invoked;
-			return not invoked; // if not invoked, remove it!
-		};
-
-		obs.erase(std::remove_if(obs.begin(), obs.end(), invoker), obs.end());
-
-		if (obs.empty()) { _observers.erase(it); }
-
-		return count;
+		std::cout << "hell1" << key;
 	}
+};
 
-	// Registers a function callback on event "name"
-	void Register(std::string const& name, void (*f)())
+class FooB2 : public EventKeyListener
+{
+public:
+	void Key(uint32_t key, bool press) override
 	{
-		_observers[name].push_back(OPtr(new ObserverFunc(f)));
+		std::cout << "hell2" << key;
 	}
+};
 
-	// Registers an object callback on event "name"
-	template <typename T>
-	void Register(std::string const& name, std::shared_ptr<T> const& p, void (T::*f)())
+class FooB3 : public EventKeyListener
+{
+public:
+	void Key(uint32_t key, bool press) override
 	{
-		_observers[name].push_back(OPtr(new ObserverMember<T>(p, f)));
+		std::cout << "hell3" << key;
 	}
+};
 
-private:
-	struct ObserverFunc : Observer
-	{
-		ObserverFunc(void (*f)()) : _f(f) {}
-
-		virtual bool invoke() override { _f(); return true; }
-
-		void (*_f)();
-	};
-
-	template <typename T>
-	struct ObserverMember : Observer
-	{
-		ObserverMember(std::weak_ptr<T> p, void (T::*f)()) : _p(p), _f(f) {}
-
-		virtual bool invoke() override
-		{
-			std::shared_ptr<T> p = _p.lock();
-			if (not p) { return false; }
-			auto ttt = p.get();
-
-			(ttt->*_f)();
-			return true;
-		}
-
-		std::weak_ptr<T> _p;
-		void (T::*_f)();
-	};
-
-	// mutable because we remove observers lazily
-	mutable std::unordered_map<std::string, Observers> _observers;
-}; // class EventManager
 
 //-----------------------------------------------------------------------------
 class GameApp
@@ -105,26 +64,44 @@ class GameApp
 public:
 	bool Init() 
 	{ 
-		Signal<int> sig;
+		EventSignal<EventKeyListener, uint32_t, bool> sigKey;
 
-		sig.Connect<foo>(fb2, &foo::f);
+		FooB1 *f1 = new FooB1;
+		FooB2 *f2 = new FooB2;
+		FooB3 *f3 = new FooB3;
 
-		sig.Connect(fb, &foo::f);
+		sigKey.Connect(f1, &FooB1::Key);
+		sigKey.Connect(f2, &FooB2::Key);
+		sigKey.Connect(f3, &FooB3::Key);
 
-		sig(10);
-
-		fb2.reset();
-
-		sig(20);
-
-
-		////fb3.lock()->*f(2);
-
-		//EventManager em;
-
-		//em.Register<foo>("test", fb2, &foo::f2);
+		sigKey(10, true);
 
 
+
+
+
+
+
+
+		/*FooB *fff = new FooB;
+		FooB *fff2 = new FooB;
+		FooB *fff3 = new FooB;
+		
+		std::function<void(uint32_t, uint32_t)> funca = &FooB::Key;
+
+
+
+		EventSignal<EventResizeEventListener, uint32_t, uint32_t> sigResize;
+		EventSignal<EventKeyListener, uint32_t, bool> sigKey;
+		
+		sigResize.Connect(fff, &FooB::Resize);
+		sigKey.Connect(fff, &FooB::Key);
+
+		sigResize(10, 20);
+		sigKey(10, true);
+		delete fff; fff = nullptr;
+		sigResize(40, 50);
+		sigKey(10, false);*/
 
 		return true; 
 	}
