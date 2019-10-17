@@ -22,7 +22,7 @@ int WINAPI wWinMain(
 {
 	unrimp
 	
-	
+	https://discourse.bsframework.io/
 	Configuration config;
 	return Application::Run<GameApp>(config);
 }
