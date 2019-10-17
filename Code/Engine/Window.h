@@ -26,6 +26,7 @@ private:
 	void switchFullscreen(bool newFullscreen);
 	bool initDPI();
 	void resize();
+	bool onWindowMessage(unsigned msg, unsigned wParam, unsigned lParam);
 
 	WindowConfig &m_config;
 	WindowNativeHandle m_native;

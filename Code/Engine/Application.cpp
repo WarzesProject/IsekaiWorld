@@ -61,8 +61,8 @@ bool Application::initSubsystem()
 
 	SE_INIT_SUBSYSTEM(Log::Create(config.log));
 	SE_INIT_SUBSYSTEM(OSPlatform::Create());
-	SE_INIT_SUBSYSTEM(Window::Create(config.window));
 	SE_INIT_SUBSYSTEM(Input::Create());
+	SE_INIT_SUBSYSTEM(Window::Create(config.window));	
 	SE_INIT_SUBSYSTEM(RenderSystem::Create(config.render));
 
 #undef SE_INIT_SUBSYSTEM
@@ -92,7 +92,7 @@ bool Application::beginFrame()
 bool Application::endFrame()
 {
 	if (IsErrorCriticalExit()) return false;
-	if (!m_impl->activeEndFrame) return true;
+	//if (!m_impl->activeEndFrame) return true;
 
 	static auto &render = GetSubsystem<RenderSystem>();
 
@@ -110,7 +110,7 @@ bool Application::update()
 
 	TODO("при неактивности окна или его сворачивании нужно снижать потребление ресурсов. но с неактивностью пока косяк - ведь оно может быть неактивно, но все еще видимо - а значит всеже должно рендерится... возможно лучше просто понижать vsync? код пока оставлен для примера обработки данного события");
 	TODO(" а вообще при деактивации окна должна освобождаться мышь (если она захвачена, а при активации возвращаться к норме");
-	if (window.IsActive())
+	/*if (window.IsActive())
 	{
 		m_impl->activeBeginFrame = true;
 		m_impl->activeEndFrame = true;
@@ -120,9 +120,9 @@ bool Application::update()
 	{
 		m_impl->activeBeginFrame = false;
 		m_impl->activeEndFrame = false;
-	}
+	}*/
 
-	if (!m_impl->activeUpdate) return true;
+	//if (!m_impl->activeUpdate) return true;
 
 	if (!window.Update())
 		return false;
@@ -132,9 +132,9 @@ bool Application::update()
 //-----------------------------------------------------------------------------
 void Application::close()
 {
-	RenderSystem::Destroy();
-	Input::Destroy();
+	RenderSystem::Destroy();	
 	Window::Destroy();
+	Input::Destroy();
 	OSPlatform::Destroy();
 	Log::Destroy();
 	Console::Destroy();
