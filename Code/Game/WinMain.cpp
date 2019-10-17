@@ -20,6 +20,9 @@ int WINAPI wWinMain(
 	[[maybe_unused]] _In_ LPWSTR lpCmdLine,
 	[[maybe_unused]] _In_ int nCmdShow)
 {
+	unrimp
+	
+	
 	Configuration config;
 	return Application::Run<GameApp>(config);
 }
