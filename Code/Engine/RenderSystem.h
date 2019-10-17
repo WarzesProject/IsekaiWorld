@@ -18,6 +18,5 @@ public:
 
 private:
 	RenderConfig &m_config;
-
 	IRenderer *m_renderer = nullptr;
 };

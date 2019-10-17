@@ -50,9 +50,6 @@
     <ClCompile Include="StringUtils.cpp">
       <Filter>Core\Utility</Filter>
     </ClCompile>
-    <ClCompile Include="DisplayFlags.cpp">
-      <Filter>Render\Core</Filter>
-    </ClCompile>
     <ClCompile Include="RenderUtils.cpp">
       <Filter>Render\Core</Filter>
     </ClCompile>
@@ -73,9 +70,6 @@
     </ClCompile>
     <ClCompile Include="Offset3D.cpp">
       <Filter>Math</Filter>
-    </ClCompile>
-    <ClCompile Include="D3D11CommandContext.cpp">
-      <Filter>Render\GAPI\D3D11\Render State</Filter>
     </ClCompile>
     <ClCompile Include="OSPlatform.cpp">
       <Filter>Core\PlatformSpecific</Filter>
@@ -167,12 +161,6 @@
     <ClInclude Include="StringUtils.h">
       <Filter>Core\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="VideoAdapter.h">
-      <Filter>Render\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="DisplayFlags.h">
-      <Filter>Render\Core</Filter>
-    </ClInclude>
     <ClInclude Include="RenderUtils.h">
       <Filter>Render\Core</Filter>
     </ClInclude>
@@ -202,9 +190,6 @@
     </ClInclude>
     <ClInclude Include="PlatormWin32.h">
       <Filter>Core\Base\Platform</Filter>
-    </ClInclude>
-    <ClInclude Include="D3D11CommandContext.h">
-      <Filter>Render\GAPI\D3D11\Render State</Filter>
     </ClInclude>
     <ClInclude Include="OSPlatform.h">
       <Filter>Core\PlatformSpecific</Filter>
