@@ -183,7 +183,8 @@
     <ClInclude Include="DisplayFlags.h" />
     <ClInclude Include="EngineConfig.h" />
     <ClInclude Include="Error.h" />
-    <ClInclude Include="EventTemp.h" />
+    <ClInclude Include="EventListener.h" />
+    <ClInclude Include="EventSignal.h" />
     <ClInclude Include="Extent2D.h" />
     <ClInclude Include="Extent3D.h" />
     <ClInclude Include="InlineFunc.h" />
@@ -227,7 +228,6 @@
     <ClCompile Include="D3DVendor.cpp" />
     <ClCompile Include="DisplayFlags.cpp" />
     <ClCompile Include="Error.cpp" />
-    <ClCompile Include="EventTemp.cpp" />
     <ClCompile Include="Extent2D.cpp" />
     <ClCompile Include="Extent3D.cpp" />
     <ClCompile Include="Input.cpp" />

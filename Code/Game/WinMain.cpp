@@ -4,19 +4,16 @@
 #include <functional>
 #include <string>
 #include <algorithm>
-#include "Engine/EventTemp.h"
 #include "Engine/SignalAndSlot.h"
+#include "Engine/EventSignal.h"
 
-class FooB1 : public EventListener//: public EventKeyListener
+class FooB1 : public EventListener
 {
 public:
-	~FooB1() { delete i; i = 0; }
-	void Key(uint32_t key, bool press)// override
+	void Key(uint32_t key, bool press)
 	{
-		std::cout << "hell1" << key << *i << std::endl;
+		std::cout << "hell " << key << std::endl;
 	}
-
-	int *i = new int(10);
 };
 
 //-----------------------------------------------------------------------------
@@ -28,16 +25,21 @@ public:
 		FooB1 *f1 = new FooB1;
 
 
-		//Signal<uint32_t, bool> sig2;
-		//sig2.Connect(*f1, &FooB1::Key);
-		//sig2(10, true);
-
+		
 		EventSignal<uint32_t, bool> sig3;
 		sig3.Connect(f1, &FooB1::Key);
 		sig3(10, true);
+		sig3.Disconnect(f1);
 		sig3(20, true);
-		delete f1; f1 = nullptr;
+		sig3.Connect(f1, &FooB1::Key);
+
 		sig3(30, true);
+		sig3(40, true);
+		sig3(50, true);
+		delete f1; f1 = nullptr;
+		sig3(60, true);
+		
+		
 
 
 		return true; 

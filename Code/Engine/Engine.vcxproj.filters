@@ -80,9 +80,6 @@
     <ClCompile Include="OSPlatform.cpp">
       <Filter>Core\PlatformSpecific</Filter>
     </ClCompile>
-    <ClCompile Include="EventTemp.cpp">
-      <Filter>Core\Event</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -212,11 +209,14 @@
     <ClInclude Include="OSPlatform.h">
       <Filter>Core\PlatformSpecific</Filter>
     </ClInclude>
-    <ClInclude Include="EventTemp.h">
-      <Filter>Core\Event</Filter>
-    </ClInclude>
     <ClInclude Include="SignalAndSlot.h">
       <Filter>_OLD\Core\Template</Filter>
+    </ClInclude>
+    <ClInclude Include="EventSignal.h">
+      <Filter>Core\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="EventListener.h">
+      <Filter>Core\Event</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
