@@ -36,7 +36,7 @@
 //=============================================================================
 // DEBUG MODE
 //=============================================================================
-#if defined(_DEBUG) || defined(DEBUG)
+#if defined(_DEBUG) || defined(DEBUG) || !defined(NDEBUG)
 #	undef  SE_DEBUG
 #	define SE_DEBUG 1
 #endif

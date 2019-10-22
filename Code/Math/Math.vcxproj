@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{8CE5FE01-6535-4B5F-B175-D6011907396B}</ProjectGuid>
+    <ProjectGuid>{F6AA7F87-9852-4D6A-B641-409CE26656BC}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Engine</RootNamespace>
+    <RootNamespace>Math</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -169,57 +169,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Application.h" />
-    <ClInclude Include="Configuration.h" />
-    <ClInclude Include="Args.h" />
-    <ClInclude Include="Console.h" />
-    <ClInclude Include="D3D11RenderDevice.h" />
-    <ClInclude Include="D3D11Renderer.h" />
-    <ClInclude Include="D3DUtils.h" />
-    <ClInclude Include="D3DVendor.h" />
-    <ClInclude Include="Error.h" />
-    <ClInclude Include="EventListener.h" />
-    <ClInclude Include="EventSignal.h" />
-    <ClInclude Include="Input.h" />
-    <ClInclude Include="IRenderer.h" />
-    <ClInclude Include="Log.h" />
-    <ClInclude Include="LogConfig.h" />
-    <ClInclude Include="RenderConfig.h" />
-    <ClInclude Include="RenderSystem.h" />
-    <ClInclude Include="RenderUtils.h" />
-    <ClInclude Include="SignalAndSlot.h" />
-    <ClInclude Include="Subsystem.h" />
-    <ClInclude Include="OSPlatform.h" />
+    <ClInclude Include="CoreMath.h" />
+    <ClInclude Include="Extent2D.h" />
+    <ClInclude Include="Extent3D.h" />
+    <ClInclude Include="Offset2D.h" />
+    <ClInclude Include="Offset3D.h" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="SystemInfo.h" />
-    <ClInclude Include="Window.h" />
-    <ClInclude Include="WindowConfig.h" />
-    <ClInclude Include="WindowNativeHandle.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Application.cpp" />
-    <ClCompile Include="Args.cpp" />
-    <ClCompile Include="Console.cpp" />
-    <ClCompile Include="D3D11RenderDevice.cpp" />
-    <ClCompile Include="D3D11Renderer.cpp" />
-    <ClCompile Include="D3DUtils.cpp" />
-    <ClCompile Include="D3DVendor.cpp" />
-    <ClCompile Include="Error.cpp" />
-    <ClCompile Include="Input.cpp" />
-    <ClCompile Include="Log.cpp" />
-    <ClCompile Include="OSPlatform.cpp" />
-    <ClCompile Include="RenderSystem.cpp" />
-    <ClCompile Include="RenderUtils.cpp" />
+    <ClCompile Include="CoreMath.cpp" />
+    <ClCompile Include="Extent2D.cpp" />
+    <ClCompile Include="Extent3D.cpp" />
+    <ClCompile Include="Offset2D.cpp" />
+    <ClCompile Include="Offset3D.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="SystemInfo.cpp" />
-    <ClCompile Include="Window.cpp" />
-    <ClCompile Include="WindowDPI.cpp" />
-    <ClCompile Include="WindowWindowProc.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

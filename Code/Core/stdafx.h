@@ -2,8 +2,7 @@
 
 //-----------------------------------------------------------------------------
 // Base Engine Header
-#include <Core/BaseHeader.h>
-#include <Core/Timer.h>
+#include "BaseHeader.h"
 
 //-----------------------------------------------------------------------------
 // Other Engine Header

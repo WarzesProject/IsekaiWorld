@@ -4,7 +4,7 @@
 
 //-----------------------------------------------------------------------------
 // Base Engine Header
-#include "Engine/BaseHeader.h"
+#include "Core/BaseHeader.h"
 
 //-----------------------------------------------------------------------------
 // STL Header
@@ -32,6 +32,8 @@
 #pragma warning(pop)
 
 //-----------------------------------------------------------------------------
+#pragma comment(lib, "Core.lib")
+#pragma comment(lib, "Math.lib")
 #pragma comment(lib, "Engine.lib")
 #pragma comment(lib, "3rdparty.lib")
 //#pragma comment(lib, "winmm.lib")

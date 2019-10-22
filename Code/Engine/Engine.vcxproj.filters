@@ -35,9 +35,6 @@
     <ClCompile Include="D3DUtils.cpp">
       <Filter>Render\GAPI\D3DCore</Filter>
     </ClCompile>
-    <ClCompile Include="Timer.cpp">
-      <Filter>Core\Utility</Filter>
-    </ClCompile>
     <ClCompile Include="RenderSystem.cpp">
       <Filter>Render\Core</Filter>
     </ClCompile>
@@ -47,29 +44,11 @@
     <ClCompile Include="D3D11RenderDevice.cpp">
       <Filter>Render\GAPI\D3D11\Core</Filter>
     </ClCompile>
-    <ClCompile Include="StringUtils.cpp">
-      <Filter>Core\Utility</Filter>
-    </ClCompile>
     <ClCompile Include="RenderUtils.cpp">
       <Filter>Render\Core</Filter>
     </ClCompile>
     <ClCompile Include="D3DVendor.cpp">
       <Filter>Render\GAPI\D3DCore</Filter>
-    </ClCompile>
-    <ClCompile Include="Extent2D.cpp">
-      <Filter>Math</Filter>
-    </ClCompile>
-    <ClCompile Include="CoreMath.cpp">
-      <Filter>Math</Filter>
-    </ClCompile>
-    <ClCompile Include="Extent3D.cpp">
-      <Filter>Math</Filter>
-    </ClCompile>
-    <ClCompile Include="Offset2D.cpp">
-      <Filter>Math</Filter>
-    </ClCompile>
-    <ClCompile Include="Offset3D.cpp">
-      <Filter>Math</Filter>
     </ClCompile>
     <ClCompile Include="OSPlatform.cpp">
       <Filter>Core\PlatformSpecific</Filter>
@@ -77,30 +56,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="Version.h">
-      <Filter>Core\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="BaseHeader.h">
-      <Filter>Core\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="EngineConfig.h">
-      <Filter>Core\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="InlineFunc.h">
-      <Filter>Core\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="Macros.h">
-      <Filter>Core\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="Platform.h">
-      <Filter>Core\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="PlatformCompiler.h">
-      <Filter>Core\Base\Platform</Filter>
-    </ClInclude>
-    <ClInclude Include="PlatformOS.h">
-      <Filter>Core\Base\Platform</Filter>
-    </ClInclude>
     <ClInclude Include="Application.h">
       <Filter>Engine</Filter>
     </ClInclude>
@@ -140,9 +95,6 @@
     <ClInclude Include="D3DUtils.h">
       <Filter>Render\GAPI\D3DCore</Filter>
     </ClInclude>
-    <ClInclude Include="Timer.h">
-      <Filter>Core\Utility</Filter>
-    </ClInclude>
     <ClInclude Include="RenderConfig.h">
       <Filter>Render\Core</Filter>
     </ClInclude>
@@ -158,38 +110,14 @@
     <ClInclude Include="D3D11RenderDevice.h">
       <Filter>Render\GAPI\D3D11\Core</Filter>
     </ClInclude>
-    <ClInclude Include="StringUtils.h">
-      <Filter>Core\Utility</Filter>
-    </ClInclude>
     <ClInclude Include="RenderUtils.h">
       <Filter>Render\Core</Filter>
     </ClInclude>
     <ClInclude Include="D3DVendor.h">
       <Filter>Render\GAPI\D3DCore</Filter>
     </ClInclude>
-    <ClInclude Include="Extent2D.h">
-      <Filter>Math</Filter>
-    </ClInclude>
-    <ClInclude Include="CoreMath.h">
-      <Filter>Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Extent3D.h">
-      <Filter>Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Offset2D.h">
-      <Filter>Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Offset3D.h">
-      <Filter>Math</Filter>
-    </ClInclude>
-    <ClInclude Include="NonCopyable.h">
-      <Filter>Core\Template</Filter>
-    </ClInclude>
     <ClInclude Include="WindowNativeHandle.h">
       <Filter>Core\PlatformSpecific\Window</Filter>
-    </ClInclude>
-    <ClInclude Include="PlatormWin32.h">
-      <Filter>Core\Base\Platform</Filter>
     </ClInclude>
     <ClInclude Include="OSPlatform.h">
       <Filter>Core\PlatformSpecific</Filter>
@@ -208,20 +136,11 @@
     <Filter Include="Core">
       <UniqueIdentifier>{0bcf6af9-943b-4145-92bb-248009884fa6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Base">
-      <UniqueIdentifier>{77724ee3-a06e-453c-b451-d56d8eb8a2d0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Base\Platform">
-      <UniqueIdentifier>{b1627d86-3651-43bf-bcbd-c218ed392b20}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine">
       <UniqueIdentifier>{20adfa92-65ac-4508-9163-41f7170d542c}</UniqueIdentifier>
     </Filter>
     <Filter Include="Core\Debug">
       <UniqueIdentifier>{8d5408fd-a8eb-46a1-b851-28580533f335}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Template">
-      <UniqueIdentifier>{5d56e818-f952-4a21-864d-fd7896e46052}</UniqueIdentifier>
     </Filter>
     <Filter Include="Core\PlatformSpecific">
       <UniqueIdentifier>{87d20703-0f9c-49dd-bf76-6204571d7a1e}</UniqueIdentifier>
@@ -238,9 +157,6 @@
     <Filter Include="Render">
       <UniqueIdentifier>{4c525c92-dc44-4e8a-a2f7-c92c951a71cd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Utility">
-      <UniqueIdentifier>{aa586ed0-f7b3-41ea-806d-4627e4ad9bef}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Render\GAPI">
       <UniqueIdentifier>{2c4f3f17-c47f-4a93-b939-41f92bdedba9}</UniqueIdentifier>
     </Filter>
@@ -255,9 +171,6 @@
     </Filter>
     <Filter Include="Render\GAPI\D3D11\Core">
       <UniqueIdentifier>{8a619976-b034-4763-a4da-a9383060431d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Math">
-      <UniqueIdentifier>{40be18a1-d29e-42df-b0e6-76b27eec2865}</UniqueIdentifier>
     </Filter>
     <Filter Include="Render\GAPI\D3D11\Render State">
       <UniqueIdentifier>{0e9aac27-a240-488f-9b50-995952694abb}</UniqueIdentifier>

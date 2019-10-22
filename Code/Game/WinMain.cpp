@@ -20,9 +20,6 @@ int WINAPI wWinMain(
 	[[maybe_unused]] _In_ LPWSTR lpCmdLine,
 	[[maybe_unused]] _In_ int nCmdShow)
 {
-	unrimp
-	
-	https://discourse.bsframework.io/
 	Configuration config;
 	return Application::Run<GameApp>(config);
 }

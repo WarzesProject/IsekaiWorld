@@ -7,7 +7,6 @@
 #include "Window.h"
 #include "Input.h"
 #include "RenderSystem.h"
-#include "Timer.h"
 //-----------------------------------------------------------------------------
 struct AppPimpl
 {
