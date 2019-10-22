@@ -12,8 +12,14 @@ namespace SE_NAMESPACE {}
 // Platform Macros
 //=============================================================================
 #if SE_COMPILER_MSVC
-#	define SE_FORCE_INLINE __forceinline
 #	define SE_NO_VTABLE __declspec(novtable)	// https://habr.com/ru/post/442340/
+#	define SE_THREADLOCAL __declspec(thread)
+#elif SE_COMPILER_CLANG
+#	define SE_NO_VTABLE
+#	define SE_THREADLOCAL __thread
+#elif SE_COMPILER_GNUC
+#	define SE_NO_VTABLE
+#	define SE_THREADLOCAL __thread
 #endif
 
 //=============================================================================

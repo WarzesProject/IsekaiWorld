@@ -8,6 +8,9 @@
     <ClCompile Include="StringUtils.cpp">
       <Filter>Core\Utility</Filter>
     </ClCompile>
+    <ClCompile Include="MemoryAllocator.cpp">
+      <Filter>Allocators</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -56,6 +59,15 @@
     <ClInclude Include="GAPIHeader.h">
       <Filter>Core\Base\HeaderConfig</Filter>
     </ClInclude>
+    <ClInclude Include="MemoryAllocator.h">
+      <Filter>Allocators</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryStatistics.h">
+      <Filter>Allocators</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryInternal.h">
+      <Filter>Allocators</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Core">
@@ -75,6 +87,9 @@
     </Filter>
     <Filter Include="Core\Base\HeaderConfig">
       <UniqueIdentifier>{bb982ea4-f1cb-4beb-856c-f67ae920290f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Allocators">
+      <UniqueIdentifier>{b39b1edc-a270-4309-b06d-fd931a4e4eef}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

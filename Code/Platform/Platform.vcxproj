@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{D6CC2695-4F90-4614-AACC-3650BA8E8C29}</ProjectGuid>
+    <ProjectGuid>{E5614DB6-668C-4C82-A762-A5C5065101C0}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Empty</RootNamespace>
+    <RootNamespace>Platform</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -169,36 +169,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="BaseHeader.h" />
-    <ClInclude Include="EngineConfig.h" />
-    <ClInclude Include="GAPIHeader.h" />
-    <ClInclude Include="InlineFunc.h" />
-    <ClInclude Include="Macros.h" />
-    <ClInclude Include="MemoryAllocator.h" />
-    <ClInclude Include="MemoryInternal.h" />
-    <ClInclude Include="MemoryStatistics.h" />
-    <ClInclude Include="NonCopyable.h" />
-    <ClInclude Include="OSHeader.h" />
-    <ClInclude Include="Platform.h" />
-    <ClInclude Include="PlatformCompiler.h" />
-    <ClInclude Include="PlatformOS.h" />
-    <ClInclude Include="PlatormWin32.h" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="STDHeader.h" />
-    <ClInclude Include="StringUtils.h" />
-    <ClInclude Include="Timer.h" />
-    <ClInclude Include="Version.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MemoryAllocator.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="StringUtils.cpp" />
-    <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
