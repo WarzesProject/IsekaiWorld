@@ -1,11 +1,5 @@
 #include "stdafx.h"
 #include "Application.h"
-#include "Args.h"
-#include "Console.h"
-#include "Log.h"
-#include "OSPlatform.h"
-#include "Window.h"
-#include "Input.h"
 #include "RenderSystem.h"
 //-----------------------------------------------------------------------------
 struct AppPimpl

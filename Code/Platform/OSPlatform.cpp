@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "OSPlatform.h"
-#include "Error.h"
 //-----------------------------------------------------------------------------
 OSPlatform::OSPlatform()
 {

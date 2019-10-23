@@ -171,43 +171,22 @@
   <ItemGroup>
     <ClInclude Include="Application.h" />
     <ClInclude Include="Configuration.h" />
-    <ClInclude Include="Args.h" />
-    <ClInclude Include="Console.h" />
     <ClInclude Include="D3D11RenderDevice.h" />
     <ClInclude Include="D3D11Renderer.h" />
     <ClInclude Include="D3DUtils.h" />
     <ClInclude Include="D3DVendor.h" />
-    <ClInclude Include="Error.h" />
-    <ClInclude Include="EventListener.h" />
-    <ClInclude Include="EventSignal.h" />
-    <ClInclude Include="Input.h" />
     <ClInclude Include="IRenderer.h" />
-    <ClInclude Include="Log.h" />
-    <ClInclude Include="LogConfig.h" />
     <ClInclude Include="RenderConfig.h" />
     <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="RenderUtils.h" />
-    <ClInclude Include="SignalAndSlot.h" />
-    <ClInclude Include="Subsystem.h" />
-    <ClInclude Include="OSPlatform.h" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="SystemInfo.h" />
-    <ClInclude Include="Window.h" />
-    <ClInclude Include="WindowConfig.h" />
-    <ClInclude Include="WindowNativeHandle.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
-    <ClCompile Include="Args.cpp" />
-    <ClCompile Include="Console.cpp" />
     <ClCompile Include="D3D11RenderDevice.cpp" />
     <ClCompile Include="D3D11Renderer.cpp" />
     <ClCompile Include="D3DUtils.cpp" />
     <ClCompile Include="D3DVendor.cpp" />
-    <ClCompile Include="Error.cpp" />
-    <ClCompile Include="Input.cpp" />
-    <ClCompile Include="Log.cpp" />
-    <ClCompile Include="OSPlatform.cpp" />
     <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="RenderUtils.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -216,10 +195,6 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="SystemInfo.cpp" />
-    <ClCompile Include="Window.cpp" />
-    <ClCompile Include="WindowDPI.cpp" />
-    <ClCompile Include="WindowWindowProc.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

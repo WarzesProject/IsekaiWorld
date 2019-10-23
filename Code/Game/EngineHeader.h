@@ -4,11 +4,15 @@
 
 //-----------------------------------------------------------------------------
 // Base Engine Header
-#include "Core/BaseHeader.h"
+#include <Core/BaseHeader.h>
+#include <Core/LogConfig.h>
+#include <Core/Error.h>
+
+#include <Platform/WindowConfig.h>
 
 //-----------------------------------------------------------------------------
 // Other Engine Header
-#include "Engine/Application.h"
+#include <Engine/Application.h>
 
 #pragma warning(pop)
 

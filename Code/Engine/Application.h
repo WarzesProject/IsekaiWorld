@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Error.h"
 #include "Configuration.h"
 
 class Application

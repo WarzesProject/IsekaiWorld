@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Subsystem.h"
 #include "WindowConfig.h"
 #include "WindowNativeHandle.h"
 

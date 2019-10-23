@@ -1,7 +1,5 @@
 #pragma once
 
-#include "Subsystem.h"
-
 class OSPlatform : public Subsystem<OSPlatform>
 {
 public:

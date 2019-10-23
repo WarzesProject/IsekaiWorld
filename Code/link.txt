@@ -1,4 +1,19 @@
 ﻿-------------------------------------------------------------------------------
+Движки
+-------------------------------------------------------------------------------
+
+https://github.com/zhangdoa/InnocenceEngine
+https://github.com/ezEngine/ezEngine
+run on coal / unrimp / pmtech
+
+https://github.com/Angelo1211/HybridRenderingEngine
+https://github.com/mortennobel/SimpleRenderEngineProject - мин SDL движок
+https://github.com/amzeratul/halley - движок Wargroove
+https://github.com/horde3d/Horde3D - мин движок
+https://github.com/zhangdoa/InnocenceEngine - список литературы в описании
+
+
+-------------------------------------------------------------------------------
 Шейдеры
 -------------------------------------------------------------------------------
 https://github.com/lettier/3d-game-shaders-for-beginners

@@ -3,61 +3,67 @@
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="Timer.cpp">
-      <Filter>Core\Utility</Filter>
+      <Filter>Utility</Filter>
     </ClCompile>
     <ClCompile Include="StringUtils.cpp">
-      <Filter>Core\Utility</Filter>
+      <Filter>Utility</Filter>
     </ClCompile>
     <ClCompile Include="MemoryAllocator.cpp">
       <Filter>Allocators</Filter>
+    </ClCompile>
+    <ClCompile Include="Error.cpp">
+      <Filter>Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>Debug</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="BaseHeader.h">
-      <Filter>Core\Base</Filter>
+      <Filter>Base</Filter>
     </ClInclude>
     <ClInclude Include="Version.h">
-      <Filter>Core\Base</Filter>
+      <Filter>Base</Filter>
     </ClInclude>
     <ClInclude Include="EngineConfig.h">
-      <Filter>Core\Base</Filter>
+      <Filter>Base</Filter>
     </ClInclude>
     <ClInclude Include="InlineFunc.h">
-      <Filter>Core\Base</Filter>
+      <Filter>Base</Filter>
     </ClInclude>
     <ClInclude Include="Macros.h">
-      <Filter>Core\Base</Filter>
+      <Filter>Base</Filter>
     </ClInclude>
     <ClInclude Include="Platform.h">
-      <Filter>Core\Base</Filter>
+      <Filter>Base</Filter>
     </ClInclude>
     <ClInclude Include="PlatormWin32.h">
-      <Filter>Core\Base\PlatformConfig</Filter>
+      <Filter>Base\PlatformConfig</Filter>
     </ClInclude>
     <ClInclude Include="PlatformCompiler.h">
-      <Filter>Core\Base\PlatformConfig</Filter>
+      <Filter>Base\PlatformConfig</Filter>
     </ClInclude>
     <ClInclude Include="PlatformOS.h">
-      <Filter>Core\Base\PlatformConfig</Filter>
+      <Filter>Base\PlatformConfig</Filter>
     </ClInclude>
     <ClInclude Include="NonCopyable.h">
-      <Filter>Core\Template</Filter>
+      <Filter>Template</Filter>
     </ClInclude>
     <ClInclude Include="Timer.h">
-      <Filter>Core\Utility</Filter>
+      <Filter>Utility</Filter>
     </ClInclude>
     <ClInclude Include="StringUtils.h">
-      <Filter>Core\Utility</Filter>
+      <Filter>Utility</Filter>
     </ClInclude>
     <ClInclude Include="STDHeader.h">
-      <Filter>Core\Base\HeaderConfig</Filter>
+      <Filter>Base\HeaderConfig</Filter>
     </ClInclude>
     <ClInclude Include="OSHeader.h">
-      <Filter>Core\Base\HeaderConfig</Filter>
+      <Filter>Base\HeaderConfig</Filter>
     </ClInclude>
     <ClInclude Include="GAPIHeader.h">
-      <Filter>Core\Base\HeaderConfig</Filter>
+      <Filter>Base\HeaderConfig</Filter>
     </ClInclude>
     <ClInclude Include="MemoryAllocator.h">
       <Filter>Allocators</Filter>
@@ -68,28 +74,52 @@
     <ClInclude Include="MemoryInternal.h">
       <Filter>Allocators</Filter>
     </ClInclude>
+    <ClInclude Include="EventSignal.h">
+      <Filter>EventBase</Filter>
+    </ClInclude>
+    <ClInclude Include="EventListener.h">
+      <Filter>EventBase</Filter>
+    </ClInclude>
+    <ClInclude Include="LogConfig.h">
+      <Filter>Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Error.h">
+      <Filter>Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Subsystem.h">
+      <Filter>Object</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Core">
-      <UniqueIdentifier>{0c2b6a60-5989-4bec-906c-520a063556d8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Base">
-      <UniqueIdentifier>{02c20b17-ac90-438a-8e44-d0ef95d6e2e7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Base\PlatformConfig">
-      <UniqueIdentifier>{f5272242-5ffe-41f4-85ae-668296997e3d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Template">
-      <UniqueIdentifier>{dbfc01c4-1a1f-47c7-b182-2fcdac561215}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Utility">
-      <UniqueIdentifier>{f762bc65-248d-47ef-91f6-159a801c1e10}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Base\HeaderConfig">
-      <UniqueIdentifier>{bb982ea4-f1cb-4beb-856c-f67ae920290f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Allocators">
       <UniqueIdentifier>{b39b1edc-a270-4309-b06d-fd931a4e4eef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base">
+      <UniqueIdentifier>{02c20b17-ac90-438a-8e44-d0ef95d6e2e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\PlatformConfig">
+      <UniqueIdentifier>{f5272242-5ffe-41f4-85ae-668296997e3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\HeaderConfig">
+      <UniqueIdentifier>{bb982ea4-f1cb-4beb-856c-f67ae920290f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EventBase">
+      <UniqueIdentifier>{16eb7bb6-2c44-4d5c-8055-787802e953a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Template">
+      <UniqueIdentifier>{dbfc01c4-1a1f-47c7-b182-2fcdac561215}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{f762bc65-248d-47ef-91f6-159a801c1e10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Debug">
+      <UniqueIdentifier>{e2839d38-6606-42e4-92de-852f3b38514d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{9c2c2086-311f-4f2e-a776-42ef7a3a5b2f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

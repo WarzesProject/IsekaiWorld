@@ -1,7 +1,5 @@
 #pragma once
 
-#include "LogConfig.h"
-#include "WindowConfig.h"
 #include "RenderConfig.h"
 
 struct Configuration

@@ -28,6 +28,8 @@ int WINAPI wWinMain(
 	Vector<int> v = { 1, 2, 3 };
 
 
+	std::vector<int> v2;
+
 
 
 	Configuration config;

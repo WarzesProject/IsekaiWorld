@@ -1,6 +1,5 @@
 ﻿#include "stdafx.h"
 #include "Window.h"
-#include "Log.h"
 //-----------------------------------------------------------------------------
 #if SE_PLATFORM_WINDOWS
 LRESULT CALLBACK windowProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
@@ -22,17 +21,6 @@ bool Window::onWindowMessage(unsigned msg, unsigned wParam, unsigned lParam)
 
 	switch (msg)
 	{
-
-	case WM_GETMINMAXINFO:
-		{
-			// установка минимально-допустимого размера окна
-			LPMINMAXINFO lpMMI = (LPMINMAXINFO)lParam;
-			lpMMI->ptMinTrackSize.x = 320;
-			lpMMI->ptMinTrackSize.y = 240;
-			handled = true;
-		}
-		break;
-
 	case WM_ACTIVATEAPP: // Focus Change
 		window.m_isActive = wParam != 0;
 		if (window.m_isActive) Log::Debug("Window active");

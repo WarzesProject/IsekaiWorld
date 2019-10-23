@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Subsystem.h"
 #include "RenderConfig.h"
 
 class IRenderer;

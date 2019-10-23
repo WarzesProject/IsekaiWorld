@@ -1,7 +1,5 @@
 #include "stdafx.h"
 #include "Window.h"
-#include "Error.h"
-#include "Log.h"
 //-----------------------------------------------------------------------------
 #if SE_PLATFORM_WINDOWS
 constexpr LPCWSTR WINDOW_CLASS_NAME = L"SapphireWindow";

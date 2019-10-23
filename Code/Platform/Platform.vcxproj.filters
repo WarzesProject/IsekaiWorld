@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="Args.cpp">
+      <Filter>Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="Console.cpp">
+      <Filter>Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="OSPlatform.cpp">
+      <Filter>Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemInfo.cpp">
+      <Filter>Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Platform\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Platform\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowDPI.cpp">
+      <Filter>Platform\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowWindowProc.cpp">
+      <Filter>Platform\Window</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="SystemInfo.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="Args.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="Console.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="OSPlatform.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Platform\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Platform\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowConfig.h">
+      <Filter>Platform\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowNativeHandle.h">
+      <Filter>Platform\Window</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{ebd6b076-96dd-4b00-be20-8b872a11f050}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Input">
+      <UniqueIdentifier>{2bdc13de-9ae7-4635-afc3-ead04c4fb387}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Window">
+      <UniqueIdentifier>{3bbbd270-e865-4f82-806f-1bd9e32ebc84}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

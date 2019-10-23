@@ -5,33 +5,6 @@
     <ClCompile Include="Application.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Error.cpp">
-      <Filter>Core\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="Args.cpp">
-      <Filter>Core\PlatformSpecific</Filter>
-    </ClCompile>
-    <ClCompile Include="Console.cpp">
-      <Filter>Core\PlatformSpecific</Filter>
-    </ClCompile>
-    <ClCompile Include="Log.cpp">
-      <Filter>Core\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="SystemInfo.cpp">
-      <Filter>Core\PlatformSpecific</Filter>
-    </ClCompile>
-    <ClCompile Include="Window.cpp">
-      <Filter>Core\PlatformSpecific\Window</Filter>
-    </ClCompile>
-    <ClCompile Include="Input.cpp">
-      <Filter>Core\PlatformSpecific\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="WindowDPI.cpp">
-      <Filter>Core\PlatformSpecific\Window</Filter>
-    </ClCompile>
-    <ClCompile Include="WindowWindowProc.cpp">
-      <Filter>Core\PlatformSpecific\Window</Filter>
-    </ClCompile>
     <ClCompile Include="D3DUtils.cpp">
       <Filter>Render\GAPI\D3DCore</Filter>
     </ClCompile>
@@ -50,44 +23,11 @@
     <ClCompile Include="D3DVendor.cpp">
       <Filter>Render\GAPI\D3DCore</Filter>
     </ClCompile>
-    <ClCompile Include="OSPlatform.cpp">
-      <Filter>Core\PlatformSpecific</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Application.h">
       <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Error.h">
-      <Filter>Core\Debug</Filter>
-    </ClInclude>
-    <ClInclude Include="Args.h">
-      <Filter>Core\PlatformSpecific</Filter>
-    </ClInclude>
-    <ClInclude Include="Console.h">
-      <Filter>Core\PlatformSpecific</Filter>
-    </ClInclude>
-    <ClInclude Include="Log.h">
-      <Filter>Core\Debug</Filter>
-    </ClInclude>
-    <ClInclude Include="LogConfig.h">
-      <Filter>Core\Debug</Filter>
-    </ClInclude>
-    <ClInclude Include="SystemInfo.h">
-      <Filter>Core\PlatformSpecific</Filter>
-    </ClInclude>
-    <ClInclude Include="Window.h">
-      <Filter>Core\PlatformSpecific\Window</Filter>
-    </ClInclude>
-    <ClInclude Include="Input.h">
-      <Filter>Core\PlatformSpecific\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="WindowConfig.h">
-      <Filter>Core\PlatformSpecific\Window</Filter>
-    </ClInclude>
-    <ClInclude Include="Subsystem.h">
-      <Filter>Core\Object</Filter>
     </ClInclude>
     <ClInclude Include="Configuration.h">
       <Filter>Engine</Filter>
@@ -116,43 +56,10 @@
     <ClInclude Include="D3DVendor.h">
       <Filter>Render\GAPI\D3DCore</Filter>
     </ClInclude>
-    <ClInclude Include="WindowNativeHandle.h">
-      <Filter>Core\PlatformSpecific\Window</Filter>
-    </ClInclude>
-    <ClInclude Include="OSPlatform.h">
-      <Filter>Core\PlatformSpecific</Filter>
-    </ClInclude>
-    <ClInclude Include="SignalAndSlot.h">
-      <Filter>_OLD\Core\Template</Filter>
-    </ClInclude>
-    <ClInclude Include="EventSignal.h">
-      <Filter>Core\Event</Filter>
-    </ClInclude>
-    <ClInclude Include="EventListener.h">
-      <Filter>Core\Event</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Core">
-      <UniqueIdentifier>{0bcf6af9-943b-4145-92bb-248009884fa6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine">
       <UniqueIdentifier>{20adfa92-65ac-4508-9163-41f7170d542c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Debug">
-      <UniqueIdentifier>{8d5408fd-a8eb-46a1-b851-28580533f335}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\PlatformSpecific">
-      <UniqueIdentifier>{87d20703-0f9c-49dd-bf76-6204571d7a1e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\PlatformSpecific\Window">
-      <UniqueIdentifier>{b1ea6da0-77c9-4d96-b183-8d149dab8b01}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\PlatformSpecific\Input">
-      <UniqueIdentifier>{00bfa07f-98fa-44aa-b03b-8b5670f5f838}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Object">
-      <UniqueIdentifier>{8fa1d60a-e53b-4097-b1dd-191bd3a9797d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Render">
       <UniqueIdentifier>{4c525c92-dc44-4e8a-a2f7-c92c951a71cd}</UniqueIdentifier>
@@ -174,24 +81,6 @@
     </Filter>
     <Filter Include="Render\GAPI\D3D11\Render State">
       <UniqueIdentifier>{0e9aac27-a240-488f-9b50-995952694abb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="_TEMP">
-      <UniqueIdentifier>{5b5948d5-81de-40a1-af09-ec83713522b2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Memory">
-      <UniqueIdentifier>{cf8938e7-5aac-4c04-89b1-53c4aa6f63ce}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Event">
-      <UniqueIdentifier>{fc2c092f-4fa2-43a3-96e1-f1321ae73ad9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="_OLD">
-      <UniqueIdentifier>{a546c7c0-e9b7-4df7-85ea-d4582ff06f8e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="_OLD\Core">
-      <UniqueIdentifier>{af7c4603-0556-47c5-a74e-dc01f21851de}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="_OLD\Core\Template">
-      <UniqueIdentifier>{43cf4ee3-7a11-4490-9926-5f3a9e079803}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
