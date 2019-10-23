@@ -172,7 +172,7 @@
     <ClInclude Include="Args.h" />
     <ClInclude Include="Console.h" />
     <ClInclude Include="Input.h" />
-    <ClInclude Include="OSPlatform.h" />
+    <ClInclude Include="Platform.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="SystemInfo.h" />
     <ClInclude Include="Window.h" />
@@ -183,7 +183,7 @@
     <ClCompile Include="Args.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="Input.cpp" />
-    <ClCompile Include="OSPlatform.cpp" />
+    <ClCompile Include="Platform.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

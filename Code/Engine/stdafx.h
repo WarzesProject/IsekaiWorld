@@ -11,7 +11,7 @@
 
 #include <Platform/Args.h>
 #include <Platform/Console.h>
-#include <Platform/OSPlatform.h>
+#include <Platform/Platform.h>
 #include <Platform/Window.h>
 #include <Platform/Input.h>
 

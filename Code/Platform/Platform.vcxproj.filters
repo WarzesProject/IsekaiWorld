@@ -8,9 +8,6 @@
     <ClCompile Include="Console.cpp">
       <Filter>Platform</Filter>
     </ClCompile>
-    <ClCompile Include="OSPlatform.cpp">
-      <Filter>Platform</Filter>
-    </ClCompile>
     <ClCompile Include="SystemInfo.cpp">
       <Filter>Platform</Filter>
     </ClCompile>
@@ -26,6 +23,9 @@
     <ClCompile Include="WindowWindowProc.cpp">
       <Filter>Platform\Window</Filter>
     </ClCompile>
+    <ClCompile Include="Platform.cpp">
+      <Filter>Platform</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -36,9 +36,6 @@
       <Filter>Platform</Filter>
     </ClInclude>
     <ClInclude Include="Console.h">
-      <Filter>Platform</Filter>
-    </ClInclude>
-    <ClInclude Include="OSPlatform.h">
       <Filter>Platform</Filter>
     </ClInclude>
     <ClInclude Include="Input.h">
@@ -52,6 +49,9 @@
     </ClInclude>
     <ClInclude Include="WindowNativeHandle.h">
       <Filter>Platform\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform.h">
+      <Filter>Platform</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

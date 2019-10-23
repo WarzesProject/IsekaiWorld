@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "OSPlatform.h"
+#include "Platform.h"
 //-----------------------------------------------------------------------------
 OSPlatform::OSPlatform()
 {

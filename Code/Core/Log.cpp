@@ -2,7 +2,7 @@
 #include "Log.h"
 TODO("исправить зависимости")
 #include "Platform/Console.h"
-#include "Platform/OSPlatform.h"
+#include "Platform/Platform.h"
 //-----------------------------------------------------------------------------
 Log::Log(LogConfig &config)
 	: m_config(config)
