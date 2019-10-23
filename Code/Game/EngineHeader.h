@@ -18,7 +18,7 @@
 #pragma comment(lib, "Platform.lib")
 #pragma comment(lib, "Engine.lib")
 #pragma comment(lib, "3rdparty.lib")
-//#pragma comment(lib, "winmm.lib")
+#pragma comment(lib, "winmm.lib")
 //#pragma comment(lib, "imm32.lib")
 //#pragma comment(lib, "version.lib")
 //#pragma comment(lib, "OpenGL32.lib")

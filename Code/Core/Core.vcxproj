@@ -187,6 +187,7 @@
     <ClInclude Include="DetectCompiler.h" />
     <ClInclude Include="DetectOS.h" />
     <ClInclude Include="ConfigPlatformWin32.h" />
+    <ClInclude Include="StackAlloc.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="STDHeader.h" />
     <ClInclude Include="StringUtils.h" />
@@ -197,7 +198,7 @@
   <ItemGroup>
     <ClCompile Include="Error.cpp" />
     <ClCompile Include="Log.cpp" />
-    <ClCompile Include="MemoryAllocator.cpp" />
+    <ClCompile Include="StackAlloc.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

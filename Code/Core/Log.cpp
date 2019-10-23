@@ -51,9 +51,9 @@ void Log::print(LogType type, std::string_view str)
 		console.Print(str);
 	}		
 
-	if (OSPlatform::IsValid() && m_config.PrintDebugOutput)
+	if (Platform::IsValid() && m_config.PrintDebugOutput)
 	{
-		static auto &osPlatform = GetSubsystem<OSPlatform>();
+		static auto &osPlatform = GetSubsystem<Platform>();
 		osPlatform.PrintDebugOutput(str);
 	}		
 

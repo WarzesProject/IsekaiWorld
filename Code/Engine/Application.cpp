@@ -32,6 +32,8 @@ bool Application::init(const Configuration &config)
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 #endif
 
+	MemStack::BeginThread();
+
 	if (!initSubsystem())
 		return false;
 
@@ -46,19 +48,20 @@ bool Application::initSubsystem()
 	auto &config = m_impl->config;
 
 #define SE_INIT_SUBSYSTEM(_ss) ((isError) = ((isError) || (IsErrorCriticalExit()) || !(_ss)))
-
-	SE_INIT_SUBSYSTEM(Args::Create());
 	
+	SE_INIT_SUBSYSTEM(Platform::Create());
+	SE_INIT_SUBSYSTEM(Args::Create());	
 	if (config.visibleConsole)
 		SE_INIT_SUBSYSTEM(Console::Create());
 
 	SE_INIT_SUBSYSTEM(Log::Create(config.log));
-	SE_INIT_SUBSYSTEM(OSPlatform::Create());
+
 	SE_INIT_SUBSYSTEM(Input::Create());
 	SE_INIT_SUBSYSTEM(Window::Create(config.window));	
 	SE_INIT_SUBSYSTEM(RenderSystem::Create(config.render));
 
 #undef SE_INIT_SUBSYSTEM
+
 	return !isError;
 }
 //-----------------------------------------------------------------------------
@@ -127,10 +130,12 @@ void Application::close()
 {
 	RenderSystem::Destroy();	
 	Window::Destroy();
-	Input::Destroy();
-	OSPlatform::Destroy();
+	Input::Destroy();	
 	Log::Destroy();
 	Console::Destroy();
 	Args::Destroy();
+	Platform::Destroy();
+
+	MemStack::EndThread();
 }
 //-----------------------------------------------------------------------------

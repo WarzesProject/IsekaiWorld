@@ -7,6 +7,7 @@
 
 #	include <Windows.h>
 #	include <shellapi.h>
+#	include <TimeAPI.h>
 
 #	if SE_ENABLE_DIRECT3D11 || SE_ENABLE_DIRECT3D12
 #		include <wrl/client.h>

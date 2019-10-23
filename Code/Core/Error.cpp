@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "Error.h"
 #include "Log.h"
-
 //-----------------------------------------------------------------------------
 // דכמבאכüםûי פכאד
 extern bool Error_IsErrorCriticalExit = false;

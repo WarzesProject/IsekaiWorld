@@ -8,14 +8,14 @@
     <ClCompile Include="StringUtils.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
-    <ClCompile Include="MemoryAllocator.cpp">
-      <Filter>Allocators</Filter>
-    </ClCompile>
     <ClCompile Include="Error.cpp">
       <Filter>Debug</Filter>
     </ClCompile>
     <ClCompile Include="Log.cpp">
       <Filter>Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="StackAlloc.cpp">
+      <Filter>Allocators</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +89,9 @@
     <ClInclude Include="ConfigPlatformWin32.h">
       <Filter>Base\PlatformConfig</Filter>
     </ClInclude>
+    <ClInclude Include="StackAlloc.h">
+      <Filter>Allocators</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Allocators">
@@ -117,6 +120,9 @@
     </Filter>
     <Filter Include="Object">
       <UniqueIdentifier>{9c2c2086-311f-4f2e-a776-42ef7a3a5b2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Threads">
+      <UniqueIdentifier>{56330bae-c9fe-456c-bc72-b378671fcc0e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

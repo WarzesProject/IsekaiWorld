@@ -26,6 +26,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "engine", "engine", "{12DF810E-FA70-4F80-A24F-641305A6BB50}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc_idea", "doc_idea", "{1AA71D61-8489-4972-A5A0-3E92B6742298}"
+	ProjectSection(SolutionItems) = preProject
+		other.txt = other.txt
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core", "Core\Core.vcxproj", "{D6CC2695-4F90-4614-AACC-3650BA8E8C29}"
 EndProject

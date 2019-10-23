@@ -1,21 +1,25 @@
 #include "stdafx.h"
 #include "Platform.h"
 //-----------------------------------------------------------------------------
-OSPlatform::OSPlatform()
+Platform::Platform()
 {
-#if SE_COMPILER_MSVC
-//	HRESULT hr;
-//	if (FAILED(hr = CoInitializeEx(nullptr, COINIT_MULTITHREADED)))
-//	{
-//		CriticalErrorExit("Failed to initialize COM");
-//		return;
-//	}
+#if SE_PLATFORM_WINDOWS
+	if (timeBeginPeriod(1) == TIMERR_NOCANDO)
+	{
+		TODO("Log");//"Unable to set timer resolution to 1ms.This can cause significant waste in performance for waiting threads.";
+	}
 #endif
-
 	setValid(true);
 }
 //-----------------------------------------------------------------------------
-void OSPlatform::PrintDebugOutput(std::string_view str)
+Platform::~Platform()
+{
+#if SE_PLATFORM_WINDOWS
+	timeEndPeriod(1);
+#endif
+}
+//-----------------------------------------------------------------------------
+void Platform::PrintDebugOutput(std::string_view str)
 {
 #if SE_COMPILER_MSVC && SE_DEBUG
 	OutputDebugStringA(str.data());

@@ -1,9 +1,10 @@
 #pragma once
 
-class OSPlatform : public Subsystem<OSPlatform>
+class Platform : public Subsystem<Platform>
 {
 public:
-	OSPlatform();
+	Platform();
+	~Platform();
 
 	void PrintDebugOutput(std::string_view str);
 };
