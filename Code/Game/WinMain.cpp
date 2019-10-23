@@ -1,10 +1,10 @@
 #include "EngineHeader.h"
-#include <Windows.h>
 
-#include "Core/MemoryAllocator.h"
+/*
+draft
+- CoreApplication.cpp 149
 
-template <typename T, typename A = StdAlloc<T>>
-using Vector = std::vector<T, A>;
+*/
 
 //-----------------------------------------------------------------------------
 class GameApp
@@ -25,13 +25,6 @@ int WINAPI wWinMain(
 	[[maybe_unused]] _In_ LPWSTR lpCmdLine,
 	[[maybe_unused]] _In_ int nCmdShow)
 {
-	Vector<int> v = { 1, 2, 3 };
-
-
-	std::vector<int> v2;
-
-
-
 	Configuration config;
 	return Application::Run<GameApp>(config);
 }

@@ -35,18 +35,6 @@
     <ClInclude Include="Macros.h">
       <Filter>Base</Filter>
     </ClInclude>
-    <ClInclude Include="Platform.h">
-      <Filter>Base</Filter>
-    </ClInclude>
-    <ClInclude Include="PlatormWin32.h">
-      <Filter>Base\PlatformConfig</Filter>
-    </ClInclude>
-    <ClInclude Include="PlatformCompiler.h">
-      <Filter>Base\PlatformConfig</Filter>
-    </ClInclude>
-    <ClInclude Include="PlatformOS.h">
-      <Filter>Base\PlatformConfig</Filter>
-    </ClInclude>
     <ClInclude Include="NonCopyable.h">
       <Filter>Template</Filter>
     </ClInclude>
@@ -91,6 +79,15 @@
     </ClInclude>
     <ClInclude Include="Subsystem.h">
       <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="DetectCompiler.h">
+      <Filter>Base\PlatformConfig</Filter>
+    </ClInclude>
+    <ClInclude Include="DetectOS.h">
+      <Filter>Base\PlatformConfig</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigPlatformWin32.h">
+      <Filter>Base\PlatformConfig</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

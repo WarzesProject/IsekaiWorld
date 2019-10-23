@@ -6,6 +6,4 @@ public:
 	OSPlatform();
 
 	void PrintDebugOutput(std::string_view str);
-	
-	void SetCurrentThreadName(std::string_view name);
 };
