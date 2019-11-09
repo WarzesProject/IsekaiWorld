@@ -23,8 +23,8 @@ bool Window::onWindowMessage(unsigned msg, unsigned wParam, unsigned lParam)
 	{
 	case WM_ACTIVATEAPP: // Focus Change
 		window.m_isActive = wParam != 0;
-		if (window.m_isActive) OldLog::Debug("Window active");
-		else OldLog::Debug("Window inactive");
+		if (window.m_isActive) Log::Debug("Window active");
+		else Log::Debug("Window inactive");
 		handled = true;
 		break;
 

@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "Error.h"
-#include "OldLog.h"
+#include "Log.h"
 //-----------------------------------------------------------------------------
 // דכמבאכüםûי פכאד
 extern bool Error_IsErrorCriticalExit = false;
@@ -17,7 +17,7 @@ void CriticalErrorExit()
 //-----------------------------------------------------------------------------
 void CriticalErrorExit(std::string_view str)
 {
-	OldLog::Error(str);
+	Log::Error(str);
 	CriticalErrorExit();
 }
 //-----------------------------------------------------------------------------

@@ -177,7 +177,7 @@
     <ClInclude Include="EventSignal.h" />
     <ClInclude Include="GlobalTime.h" />
     <ClInclude Include="InlineFunc.h" />
-    <ClInclude Include="OldLog.h" />
+    <ClInclude Include="Log.h" />
     <ClInclude Include="LogConfig.h" />
     <ClInclude Include="Macros.h" />
     <ClInclude Include="MemoryAllocator.h" />
@@ -200,7 +200,7 @@
   <ItemGroup>
     <ClCompile Include="Error.cpp" />
     <ClCompile Include="GlobalTime.cpp" />
-    <ClCompile Include="OldLog.cpp" />
+    <ClCompile Include="Log.cpp" />
     <ClCompile Include="StackAlloc.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

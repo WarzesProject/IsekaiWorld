@@ -17,7 +17,7 @@
     <ClCompile Include="GlobalTime.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
-    <ClCompile Include="OldLog.cpp">
+    <ClCompile Include="Log.cpp">
       <Filter>Debug</Filter>
     </ClCompile>
   </ItemGroup>
@@ -98,7 +98,7 @@
     <ClInclude Include="GlobalTime.h">
       <Filter>Utility</Filter>
     </ClInclude>
-    <ClInclude Include="OldLog.h">
+    <ClInclude Include="Log.h">
       <Filter>Debug</Filter>
     </ClInclude>
   </ItemGroup>

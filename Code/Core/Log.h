@@ -11,10 +11,10 @@ enum class LogType
 	Debug
 };
 
-class OldLog : public Subsystem<OldLog>
+class Log : public Subsystem<Log>
 {
 public:
-	OldLog(LogConfig &config);
+	Log(LogConfig &config);
 
 	static void Error(std::string_view str);	
 	static void Warning(std::string_view str);
