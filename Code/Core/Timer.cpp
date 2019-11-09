@@ -3,32 +3,35 @@
 //-----------------------------------------------------------------------------
 using namespace std::chrono;
 //-----------------------------------------------------------------------------
-template<typename T>
-T getElapsedTime(high_resolution_clock::time_point StartTime)
-{
-	auto CurrTime = high_resolution_clock::now();
-	auto time_span = duration_cast<duration<T>>(CurrTime - StartTime);
-	return time_span.count();
-}
-//-----------------------------------------------------------------------------
 Timer::Timer()
 {
-	Restart();
+	Reset();
 }
 //-----------------------------------------------------------------------------
-void Timer::Restart()
+void Timer::Reset()
 {
-	m_StartTime = high_resolution_clock().now();
+	m_startTime = m_HRClock.now();
 }
 //-----------------------------------------------------------------------------
-double Timer::GetElapsedTime()const
+uint64_t Timer::GetMilliseconds() const
 {
-	return getElapsedTime<double>(m_StartTime);
-}
-//-----------------------------------------------------------------------------
-float Timer::GetElapsedTimeF()const
-{
+	auto newTime = m_HRClock.now();
+	duration<double> dur = newTime - m_startTime;
 
-	return getElapsedTime<float>(m_StartTime);
+	return duration_cast<milliseconds>(dur).count();
+}
+//-----------------------------------------------------------------------------
+uint64_t Timer::GetMicroseconds() const
+{
+	auto newTime = m_HRClock.now();
+	duration<double> dur = newTime - m_startTime;
+
+	return duration_cast<microseconds>(dur).count();
+}
+//-----------------------------------------------------------------------------
+uint64_t Timer::GetStartMs() const
+{
+	nanoseconds startTimeNs = m_startTime.time_since_epoch();
+	return duration_cast<milliseconds>(startTimeNs).count();
 }
 //-----------------------------------------------------------------------------

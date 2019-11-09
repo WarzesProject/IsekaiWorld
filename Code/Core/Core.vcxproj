@@ -170,13 +170,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BaseHeader.h" />
+    <ClInclude Include="BaseTypes.h" />
     <ClInclude Include="EngineConfig.h" />
     <ClInclude Include="Error.h" />
     <ClInclude Include="EventListener.h" />
     <ClInclude Include="EventSignal.h" />
-    <ClInclude Include="GAPIHeader.h" />
+    <ClInclude Include="GlobalTime.h" />
     <ClInclude Include="InlineFunc.h" />
-    <ClInclude Include="Log.h" />
+    <ClInclude Include="OldLog.h" />
     <ClInclude Include="LogConfig.h" />
     <ClInclude Include="Macros.h" />
     <ClInclude Include="MemoryAllocator.h" />
@@ -187,6 +188,7 @@
     <ClInclude Include="DetectCompiler.h" />
     <ClInclude Include="DetectOS.h" />
     <ClInclude Include="ConfigPlatformWin32.h" />
+    <ClInclude Include="PostConfigEngine.h" />
     <ClInclude Include="StackAlloc.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="STDHeader.h" />
@@ -197,7 +199,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Error.cpp" />
-    <ClCompile Include="Log.cpp" />
+    <ClCompile Include="GlobalTime.cpp" />
+    <ClCompile Include="OldLog.cpp" />
     <ClCompile Include="StackAlloc.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

@@ -6,4 +6,5 @@
 #define SE_ENABLE_DIRECT3D12 0
 #define SE_ENABLE_VULKAN     0
 
+// Enable Profiling
 #define SE_PROFILING_ENABLED 1

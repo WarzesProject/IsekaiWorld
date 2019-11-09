@@ -9,7 +9,7 @@
 #	include <shellapi.h>
 #	include <TimeAPI.h>
 
-#	if SE_ENABLE_DIRECT3D11 || SE_ENABLE_DIRECT3D12
+#	if SE_ENABLE_DIRECT3D
 #		include <wrl/client.h>
 #	endif
 #endif

@@ -13,7 +13,7 @@ inline void logRenderBackend(RenderBackend backend)
 		break;
 	}
 
-	Log::Info(text);
+	OldLog::Info(text);
 }
 //-----------------------------------------------------------------------------
 RenderSystem::RenderSystem(RenderConfig &config)

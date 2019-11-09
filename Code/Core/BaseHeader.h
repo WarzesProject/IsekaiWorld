@@ -1,32 +1,25 @@
 #pragma once
 
 //-----------------------------------------------------------------------------
-// Config Engine
 #include "Version.h"
 #include "EngineConfig.h"
-
-//-----------------------------------------------------------------------------
-// Base Header
 #include "DetectCompiler.h"
 #include "DetectOS.h"
-#if SE_PLATFORM_WINDOWS
-#	include "ConfigPlatformWin32.h"
-#endif
-
-// GAPI
-#if SE_ENABLE_DIRECT3D11 || SE_ENABLE_DIRECT3D12
-#	define SE_ENABLE_DIRECT3D 1
-#else
-#	define SE_ENABLE_DIRECT3D 0
-#endif
-
+#include "ConfigPlatformWin32.h"
+#include "PostConfigEngine.h"
 #include "Macros.h"
 #include "InlineFunc.h"
 
 //-----------------------------------------------------------------------------
 // 3rd-party Header
-#pragma warning(push, 1)
+#if SE_COMPILER_MSVC
+#	pragma warning(push, 1)
+#endif
 #include "STDHeader.h"
 #include "OSHeader.h"
-#include "GAPIHeader.h"
-#pragma warning(pop)
+#if SE_COMPILER_MSVC
+#	pragma warning(pop)
+#endif
+
+//-----------------------------------------------------------------------------
+#include "BaseTypes.h"

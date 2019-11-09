@@ -4,10 +4,13 @@ class Timer
 {
 public:
 	Timer();
-	void Restart();
-	double GetElapsedTime()const;
-	float GetElapsedTimeF()const;
+	void Reset();
+
+	uint64_t GetMilliseconds() const;
+	uint64_t GetMicroseconds() const;
+	uint64_t GetStartMs() const;
 
 private:
-	std::chrono::high_resolution_clock::time_point m_StartTime;
+	std::chrono::high_resolution_clock m_HRClock;
+	std::chrono::time_point<std::chrono::high_resolution_clock> m_startTime;
 };

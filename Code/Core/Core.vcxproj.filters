@@ -11,11 +11,14 @@
     <ClCompile Include="Error.cpp">
       <Filter>Debug</Filter>
     </ClCompile>
-    <ClCompile Include="Log.cpp">
-      <Filter>Debug</Filter>
-    </ClCompile>
     <ClCompile Include="StackAlloc.cpp">
       <Filter>Allocators</Filter>
+    </ClCompile>
+    <ClCompile Include="GlobalTime.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="OldLog.cpp">
+      <Filter>Debug</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -44,15 +47,6 @@
     <ClInclude Include="StringUtils.h">
       <Filter>Utility</Filter>
     </ClInclude>
-    <ClInclude Include="STDHeader.h">
-      <Filter>Base\HeaderConfig</Filter>
-    </ClInclude>
-    <ClInclude Include="OSHeader.h">
-      <Filter>Base\HeaderConfig</Filter>
-    </ClInclude>
-    <ClInclude Include="GAPIHeader.h">
-      <Filter>Base\HeaderConfig</Filter>
-    </ClInclude>
     <ClInclude Include="MemoryAllocator.h">
       <Filter>Allocators</Filter>
     </ClInclude>
@@ -74,23 +68,38 @@
     <ClInclude Include="Error.h">
       <Filter>Debug</Filter>
     </ClInclude>
-    <ClInclude Include="Log.h">
-      <Filter>Debug</Filter>
-    </ClInclude>
     <ClInclude Include="Subsystem.h">
       <Filter>Object</Filter>
     </ClInclude>
-    <ClInclude Include="DetectCompiler.h">
-      <Filter>Base\PlatformConfig</Filter>
-    </ClInclude>
-    <ClInclude Include="DetectOS.h">
-      <Filter>Base\PlatformConfig</Filter>
-    </ClInclude>
-    <ClInclude Include="ConfigPlatformWin32.h">
-      <Filter>Base\PlatformConfig</Filter>
-    </ClInclude>
     <ClInclude Include="StackAlloc.h">
       <Filter>Allocators</Filter>
+    </ClInclude>
+    <ClInclude Include="PostConfigEngine.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigPlatformWin32.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="DetectCompiler.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="DetectOS.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseTypes.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="OSHeader.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="STDHeader.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalTime.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="OldLog.h">
+      <Filter>Debug</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -99,12 +108,6 @@
     </Filter>
     <Filter Include="Base">
       <UniqueIdentifier>{02c20b17-ac90-438a-8e44-d0ef95d6e2e7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Base\PlatformConfig">
-      <UniqueIdentifier>{f5272242-5ffe-41f4-85ae-668296997e3d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Base\HeaderConfig">
-      <UniqueIdentifier>{bb982ea4-f1cb-4beb-856c-f67ae920290f}</UniqueIdentifier>
     </Filter>
     <Filter Include="EventBase">
       <UniqueIdentifier>{16eb7bb6-2c44-4d5c-8055-787802e953a2}</UniqueIdentifier>

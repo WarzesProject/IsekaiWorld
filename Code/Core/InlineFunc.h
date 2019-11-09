@@ -1,14 +1,14 @@
 #pragma once
 
 template <typename T>
-inline void SafeDelete(T*& resource)
+inline void SafeDelete(T *&resource)
 {
 	delete resource;
 	resource = nullptr;
 }
 
 template <typename T>
-inline void SafeDeleteArray(T*& resource)
+inline void SafeDeleteArray(T *&resource)
 {
 	delete[] resource;
 	resource = nullptr;

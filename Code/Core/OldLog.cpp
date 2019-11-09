@@ -1,44 +1,44 @@
 ﻿#include "stdafx.h"
-#include "Log.h"
+#include "OldLog.h"
 TODO("исправить зависимости")
 #include "Platform/Console.h"
 #include "Platform/Platform.h"
 //-----------------------------------------------------------------------------
-Log::Log(LogConfig &config)
+OldLog::OldLog(LogConfig &config)
 	: m_config(config)
 {
 	setValid(true);
 }
 //-----------------------------------------------------------------------------
-void Log::Error(std::string_view str)
+void OldLog::Error(std::string_view str)
 {
-	if (!Log::IsValid()) return;
-	static auto &log = GetSubsystem<Log>();
+	if (!OldLog::IsValid()) return;
+	static auto &log = GetSubsystem<OldLog>();
 	log.print(LogType::Error, str);
 }
 //-----------------------------------------------------------------------------
-void Log::Warning(std::string_view str)
+void OldLog::Warning(std::string_view str)
 {
-	if (!Log::IsValid()) return;
-	static auto &log = GetSubsystem<Log>();
+	if (!OldLog::IsValid()) return;
+	static auto &log = GetSubsystem<OldLog>();
 	log.print(LogType::Warning, str);
 }
 //-----------------------------------------------------------------------------
-void Log::Info(std::string_view str)
+void OldLog::Info(std::string_view str)
 {
-	if (!Log::IsValid()) return;
-	static auto &log = GetSubsystem<Log>();
+	if (!OldLog::IsValid()) return;
+	static auto &log = GetSubsystem<OldLog>();
 	log.print(LogType::Info, str);
 }
 //-----------------------------------------------------------------------------
-void Log::Debug(std::string_view str)
+void OldLog::Debug(std::string_view str)
 {
-	if (!Log::IsValid()) return;
-	static auto &log = GetSubsystem<Log>();
+	if (!OldLog::IsValid()) return;
+	static auto &log = GetSubsystem<OldLog>();
 	log.print(LogType::Debug, str);
 }
 //-----------------------------------------------------------------------------
-void Log::print(LogType type, std::string_view str)
+void OldLog::print(LogType type, std::string_view str)
 {
 #if !SE_DEBUG
 	if (type == LogType::Debug)

@@ -1,6 +1,6 @@
 #pragma once
 
-// Platform
+// Platform OS
 #define SE_PLATFORM_ANDROID        0
 #define SE_PLATFORM_EMSCRIPTEN     0
 #define SE_PLATFORM_LINUX          0
@@ -10,7 +10,6 @@
 //=============================================================================
 // Platform
 //=============================================================================
-// http://sourceforge.net/apps/mediawiki/predef/index.php?title=Operating_Systems
 #if defined(_WIN32) || defined(_WIN64)
 #	undef  SE_PLATFORM_WINDOWS
 #	define SE_PLATFORM_WINDOWS 1
