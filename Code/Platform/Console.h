@@ -3,7 +3,7 @@
 class Console : public Subsystem<Console>
 {
 public:
-	Console();
+	Console(bool enable);
 
 	void Print(std::string_view str);
 

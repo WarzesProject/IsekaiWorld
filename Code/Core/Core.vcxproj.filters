@@ -11,9 +11,6 @@
     <ClCompile Include="Error.cpp">
       <Filter>Debug</Filter>
     </ClCompile>
-    <ClCompile Include="StackAlloc.cpp">
-      <Filter>Allocators</Filter>
-    </ClCompile>
     <ClCompile Include="GlobalTime.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
@@ -47,15 +44,6 @@
     <ClInclude Include="StringUtils.h">
       <Filter>Utility</Filter>
     </ClInclude>
-    <ClInclude Include="MemoryAllocator.h">
-      <Filter>Allocators</Filter>
-    </ClInclude>
-    <ClInclude Include="MemoryStatistics.h">
-      <Filter>Allocators</Filter>
-    </ClInclude>
-    <ClInclude Include="MemoryInternal.h">
-      <Filter>Allocators</Filter>
-    </ClInclude>
     <ClInclude Include="EventSignal.h">
       <Filter>EventBase</Filter>
     </ClInclude>
@@ -70,9 +58,6 @@
     </ClInclude>
     <ClInclude Include="Subsystem.h">
       <Filter>Object</Filter>
-    </ClInclude>
-    <ClInclude Include="StackAlloc.h">
-      <Filter>Allocators</Filter>
     </ClInclude>
     <ClInclude Include="PostConfigEngine.h">
       <Filter>Base</Filter>
@@ -103,9 +88,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Allocators">
-      <UniqueIdentifier>{b39b1edc-a270-4309-b06d-fd931a4e4eef}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Base">
       <UniqueIdentifier>{02c20b17-ac90-438a-8e44-d0ef95d6e2e7}</UniqueIdentifier>
     </Filter>

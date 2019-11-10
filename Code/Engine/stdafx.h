@@ -6,7 +6,6 @@
 #include <Core/Timer.h>
 #include <Core/Error.h>
 #include <Core/Log.h>
-#include <Core/StackAlloc.h>
 #include <Core/GlobalTime.h>
 
 #include <Platform/WindowConfig.h>

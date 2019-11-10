@@ -45,13 +45,13 @@ void Log::print(LogType type, std::string_view str)
 		return;
 #endif
 
-	if (Console::IsValid() && m_config.PrintConsole)
+	if ( m_config.PrintConsole && Console::IsValid() )
 	{
 		static auto &console = GetSubsystem<Console>();
 		console.Print(str);
 	}		
 
-	if (Platform::IsValid() && m_config.PrintDebugOutput)
+	if (m_config.PrintDebugOutput && Platform::IsValid() )
 	{
 		static auto &osPlatform = GetSubsystem<Platform>();
 		osPlatform.PrintDebugOutput(str);

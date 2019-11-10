@@ -49,18 +49,15 @@ bool Application::initSubsystem()
 
 #define SE_INIT_SUBSYSTEM(_ss) ((isError) = ((isError) || (IsErrorCriticalExit()) || !(_ss)))
 	
-	/*SE_INIT_SUBSYSTEM(Platform::Create());
+	SE_INIT_SUBSYSTEM(Platform::Create());
 	SE_INIT_SUBSYSTEM(Args::Create());
 	SE_INIT_SUBSYSTEM(GlobalTime::Create());
-
-	if (config.visibleConsole)
-		SE_INIT_SUBSYSTEM(Console::Create());
-
-	SE_INIT_SUBSYSTEM(OldLog::Create(config.log));
+	SE_INIT_SUBSYSTEM(Console::Create(config.visibleConsole));
+	SE_INIT_SUBSYSTEM(Log::Create(config.log));
 
 	SE_INIT_SUBSYSTEM(Input::Create());
 	SE_INIT_SUBSYSTEM(Window::Create(config.window));	
-	SE_INIT_SUBSYSTEM(RenderSystem::Create(config.render));*/
+	SE_INIT_SUBSYSTEM(RenderSystem::Create(config.render));
 
 #undef SE_INIT_SUBSYSTEM
 
@@ -79,10 +76,10 @@ bool Application::beginFrame()
 	if (IsErrorCriticalExit()) return false;
 	//if (!m_impl->activeBeginFrame) return true;
 
-	//static auto &render = GetSubsystem<RenderSystem>();
+	static auto &render = GetSubsystem<RenderSystem>();
 
-	//if (!render.BeginFrame())
-	//	return false;
+	if (!render.BeginFrame())
+		return false;
 
 	return true;
 }
@@ -91,10 +88,10 @@ bool Application::endFrame()
 {
 	if (IsErrorCriticalExit()) return false;
 	//if (!m_impl->activeEndFrame) return true;
-	//static auto &render = GetSubsystem<RenderSystem>();
+	static auto &render = GetSubsystem<RenderSystem>();
 
-	//if (!render.EndFrame())
-	//	return false;
+	if (!render.EndFrame())
+		return false;
 	return true;
 }
 //-----------------------------------------------------------------------------
@@ -102,7 +99,7 @@ bool Application::update()
 {
 	if (IsErrorCriticalExit()) return false;
 
-	//static Window &window = GetSubsystem<Window>();
+	static Window &window = GetSubsystem<Window>();
 
 	//TODO("при неактивности окна или его сворачивании нужно снижать потребление ресурсов. но с неактивностью пока косяк - ведь оно может быть неактивно, но все еще видимо - а значит всеже должно рендерится... возможно лучше просто понижать vsync? код пока оставлен для примера обработки данного события");
 	//TODO(" а вообще при деактивации окна должна освобождаться мышь (если она захвачена, а при активации возвращаться к норме");
@@ -120,22 +117,22 @@ bool Application::update()
 
 	////if (!m_impl->activeUpdate) return true;
 
-	//if (!window.Update())
-	//	return false;
+	if (!window.Update())
+		return false;
 
 	return true;
 }
 //-----------------------------------------------------------------------------
 void Application::close()
 {
-	//RenderSystem::Destroy();	
-	//Window::Destroy();
-	//Input::Destroy();	
-	//OldLog::Destroy();
-	//Console::Destroy();
-	//Args::Destroy();
-	//GlobalTime::Destroy();
-	//Platform::Destroy();
+	RenderSystem::Destroy();	
+	Window::Destroy();
+	Input::Destroy();	
+	Log::Destroy();
+	Console::Destroy();
+	GlobalTime::Destroy();
+	Args::Destroy();
+	Platform::Destroy();
 
 	//MemStack::EndThread();
 }

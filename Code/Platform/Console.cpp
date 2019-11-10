@@ -1,8 +1,11 @@
 #include "stdafx.h"
 #include "Console.h"
 //-----------------------------------------------------------------------------
-Console::Console()
+Console::Console(bool enable)
 {
+	if (!enable)
+		return;
+
 #if SE_COMPILER_MSVC
 	// ref: https://stackoverflow.com/questions/15543571/allocconsole-not-displaying-cout
 
