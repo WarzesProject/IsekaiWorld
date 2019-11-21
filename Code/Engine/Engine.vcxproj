@@ -178,7 +178,6 @@
     <ClInclude Include="IRenderer.h" />
     <ClInclude Include="RenderConfig.h" />
     <ClInclude Include="RenderSystem.h" />
-    <ClInclude Include="RenderUtils.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
@@ -188,7 +187,6 @@
     <ClCompile Include="D3DUtils.cpp" />
     <ClCompile Include="D3DVendor.cpp" />
     <ClCompile Include="RenderSystem.cpp" />
-    <ClCompile Include="RenderUtils.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

@@ -17,9 +17,6 @@
     <ClCompile Include="D3D11RenderDevice.cpp">
       <Filter>Render\GAPI\D3D11\Core</Filter>
     </ClCompile>
-    <ClCompile Include="RenderUtils.cpp">
-      <Filter>Render\Core</Filter>
-    </ClCompile>
     <ClCompile Include="D3DVendor.cpp">
       <Filter>Render\GAPI\D3DCore</Filter>
     </ClCompile>
@@ -49,9 +46,6 @@
     </ClInclude>
     <ClInclude Include="D3D11RenderDevice.h">
       <Filter>Render\GAPI\D3D11\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="RenderUtils.h">
-      <Filter>Render\Core</Filter>
     </ClInclude>
     <ClInclude Include="D3DVendor.h">
       <Filter>Render\GAPI\D3DCore</Filter>
