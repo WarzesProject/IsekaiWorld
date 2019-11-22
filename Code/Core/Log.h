@@ -15,7 +15,6 @@ public:
 		All
 	};
 
-
 	explicit Log(const Logger &initLogger, Level initLevel = Level::Info) : m_logger(initLogger), m_level(initLevel) {}
 	Log(const Log &other) : m_logger(other.m_logger), m_level(other.m_level), m_str(other.m_str) {}
 
@@ -48,14 +47,14 @@ public:
 	~Log();
 
 	template <typename T, typename std::enable_if<std::is_same<T, bool>::value>::type* = nullptr>
-	Log & operator<<(const T val)
+	Log& operator<<(const T val)
 	{
 		m_str += val ? "true" : "false";
 		return *this;
 	}
 
 	template <typename T, typename std::enable_if<std::is_same<T, uint8_t>::value>::type* = nullptr>
-	Log & operator<<(const T val)
+	Log& operator<<(const T val)
 	{
 		constexpr char digits[] = "0123456789abcdef";
 
@@ -75,21 +74,28 @@ public:
 	}
 
 	template <typename T, typename std::enable_if<std::is_same<T, std::string>::value>::type* = nullptr>
-	Log & operator<<(const T & val)
+	Log& operator<<(const T &val)
+	{
+		m_str += val;
+		return *this;
+	}
+
+	template <typename T, typename std::enable_if<std::is_same<T, std::string_view>::value>::type* = nullptr>
+	Log& operator<<(const T &val)
 	{
 		m_str += val;
 		return *this;
 	}
 
 	template <typename T, typename std::enable_if<std::is_same<T, char>::value>::type* = nullptr>
-	Log & operator<<(const T *val)
+	Log& operator<<(const T *val)
 	{
 		m_str += val;
 		return *this;
 	}
 
 	template <typename T, typename std::enable_if<!std::is_same<T, char>::value>::type* = nullptr>
-	Log & operator<<(const T *val)
+	Log& operator<<(const T *val)
 	{
 		constexpr char digits[] = "0123456789abcdef";
 
@@ -110,7 +116,7 @@ public:
 	template <typename... Args> struct isContainer<std::vector<Args...>> : std::true_type {};
 
 	template <typename T, typename std::enable_if<isContainer<T>::value>::type* = nullptr>
-	Log & operator<<(const T &val)
+	Log& operator<<(const T &val)
 	{
 		bool first = true;
 

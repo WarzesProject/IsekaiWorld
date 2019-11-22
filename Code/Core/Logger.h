@@ -32,9 +32,14 @@ public:
 
 	Log CreateLog(Log::Level level) const { return Log(*this, level); }
 
+	void Error(std::string_view str);
+	void Warning(std::string_view str);
+	void Info(std::string_view str);
+	void Debug(std::string_view str);
+
 private:
 	void print(const std::string &str, const Log::Level level = Log::Level::Info) const;
-	static void printString(const std::string &str, const Log::Level level = Log::Level::Info);
+	void printString(const std::string &str, const Log::Level level = Log::Level::Info);
 
 	LogConfig &m_config;
 
@@ -52,20 +57,4 @@ private:
 	mutable std::queue<Command> m_commandQueue;
 	Thread m_logThread;
 #endif
-};
-
-class Logs : public Subsystem<Logs>
-{
-public:
-	Logs(LogConfig &config);
-
-	static void Error(std::string_view str);	
-	static void Warning(std::string_view str);
-	static void Info(std::string_view str);
-	static void Debug(std::string_view str);
-
-private:
-	void print(Log::Level type, std::string_view str);
-	
-	LogConfig &m_config;
 };

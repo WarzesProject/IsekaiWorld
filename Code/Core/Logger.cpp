@@ -1,6 +1,7 @@
 ﻿#include "stdafx.h"
 #include "Logger.h"
 TODO("исправить зависимости")
+TODO("убрать дублирование записей")
 #include "Platform/Console.h"
 #include "Platform/Platform.h"
 
@@ -18,6 +19,7 @@ Logger::Logger(LogConfig &config, Log::Level initThreshold)
 #if !SE_PLATFORM_EMSCRIPTEN
 	m_logThread = Thread(&Logger::logLoop, this);
 #endif
+	setValid(true);
 }
 //-----------------------------------------------------------------------------
 Logger::~Logger()
@@ -30,7 +32,31 @@ Logger::~Logger()
 #endif
 }
 //-----------------------------------------------------------------------------
-void Logger::print(const std::string &str, const Log::Level level = Log::Level::Info) const
+void Logger::Error(std::string_view str)
+{
+	Log log(*this, Log::Level::Error);
+	log << str;
+}
+//-----------------------------------------------------------------------------
+void Logger::Warning(std::string_view str)
+{
+	Log log(*this, Log::Level::Warning);
+	log << str;
+}
+//-----------------------------------------------------------------------------
+void Logger::Info(std::string_view str)
+{
+	Log log(*this, Log::Level::Info);
+	log << str;
+}
+//-----------------------------------------------------------------------------
+void Logger::Debug(std::string_view str)
+{
+	Log log(*this, Log::Level::Debug);
+	log << str;
+}
+//-----------------------------------------------------------------------------
+void Logger::print(const std::string &str, const Log::Level level) const
 {
 	if( level <= m_threshold )
 	{
@@ -66,6 +92,23 @@ void Logger::logLoop()
 //-----------------------------------------------------------------------------
 void Logger::printString(const std::string &str, Log::Level level)
 {
+#if !SE_DEBUG
+	if( level == Log::Level::Debug )
+		return;
+#endif
+
+	if( m_config.PrintConsole && Console::IsValid() )
+	{
+		static auto &console = GetSubsystem<Console>();
+		console.Print(str);
+	}
+
+	if( m_config.PrintDebugOutput && Platform::IsValid() )
+	{
+		static auto &osPlatform = GetSubsystem<Platform>();
+		osPlatform.PrintDebugOutput(str);
+	}
+
 #if SE_PLATFORM_ANDROID
 	int priority = 0;
 	switch( level )
@@ -152,72 +195,5 @@ void Logger::printString(const std::string &str, Log::Level level)
 	}
 	emscripten_log(flags, "%s", str.c_str());
 #endif
-}
-
-
-
-
-
-
-
-
-
-//-----------------------------------------------------------------------------
-Logs::Logs(LogConfig &config)
-	: m_config(config)
-{
-	setValid(true);
-}
-//-----------------------------------------------------------------------------
-void Logs::Error(std::string_view str)
-{
-	if (!Logs::IsValid()) return;
-	static auto &log = GetSubsystem<Logs>();
-	log.print(Log::Level::Error, str);
-}
-//-----------------------------------------------------------------------------
-void Logs::Warning(std::string_view str)
-{
-	if (!Logs::IsValid()) return;
-	static auto &log = GetSubsystem<Logs>();
-	log.print(Log::Level::Warning, str);
-}
-//-----------------------------------------------------------------------------
-void Logs::Info(std::string_view str)
-{
-	if (!Logs::IsValid()) return;
-	static auto &log = GetSubsystem<Logs>();
-	log.print(Log::Level::Info, str);
-}
-//-----------------------------------------------------------------------------
-void Logs::Debug(std::string_view str)
-{
-	if (!Logs::IsValid()) return;
-	static auto &log = GetSubsystem<Logs>();
-	log.print(Log::Level::Debug, str);
-}
-//-----------------------------------------------------------------------------
-void Logs::print(Log::Level type, std::string_view str)
-{
-#if !SE_DEBUG
-	if (type == LogType::Debug)
-		return;
-#endif
-
-	if ( m_config.PrintConsole && Console::IsValid() )
-	{
-		static auto &console = GetSubsystem<Console>();
-		console.Print(str);
-	}		
-
-	if (m_config.PrintDebugOutput && Platform::IsValid() )
-	{
-		static auto &osPlatform = GetSubsystem<Platform>();
-		osPlatform.PrintDebugOutput(str);
-	}		
-
-	TODO("вывод в слушателей лога");
-	TODO("консоль и дебаг могут быть слушателями?");
-	TODO("а вообще лог должен накапливать записи а не сразу выводить");
 }
 //-----------------------------------------------------------------------------
