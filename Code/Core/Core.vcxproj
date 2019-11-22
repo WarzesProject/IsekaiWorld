@@ -176,7 +176,9 @@
     <ClInclude Include="EventListener.h" />
     <ClInclude Include="EventSignal.h" />
     <ClInclude Include="GlobalTime.h" />
+    <ClInclude Include="Ini.h" />
     <ClInclude Include="InlineFunc.h" />
+    <ClInclude Include="Json.h" />
     <ClInclude Include="Log.h" />
     <ClInclude Include="LogConfig.h" />
     <ClInclude Include="Macros.h" />
@@ -190,8 +192,11 @@
     <ClInclude Include="STDHeader.h" />
     <ClInclude Include="StringUtils.h" />
     <ClInclude Include="Subsystem.h" />
+    <ClInclude Include="Thread.h" />
     <ClInclude Include="Timer.h" />
+    <ClInclude Include="Utf8.h" />
     <ClInclude Include="Version.h" />
+    <ClInclude Include="Xml.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Error.cpp" />

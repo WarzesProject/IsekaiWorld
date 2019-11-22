@@ -5,6 +5,10 @@
 #include <Core/BaseHeader.h>
 #include <Core/LogConfig.h>
 #include <Core/Error.h>
+#include <Core/Thread.h>
+#include <Core/Ini.h>
+#include <Core/Json.h>
+#include <Core/Xml.h>
 
 //-----------------------------------------------------------------------------
 // Platform Header

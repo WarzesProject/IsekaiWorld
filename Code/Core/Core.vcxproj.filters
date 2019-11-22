@@ -86,6 +86,21 @@
     <ClInclude Include="Log.h">
       <Filter>Debug</Filter>
     </ClInclude>
+    <ClInclude Include="Thread.h">
+      <Filter>Threads</Filter>
+    </ClInclude>
+    <ClInclude Include="Ini.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Json.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Utf8.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Xml.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">

@@ -10,8 +10,7 @@
 
 #include <memory>
 #include <chrono>
-//#include <type_traits>
-//#include <typeinfo>
+#include <system_error>
 
 // STL containers
 #include <vector>
@@ -40,6 +39,10 @@
 #include <iostream>
 #include <iomanip>
 #include <sstream>
+
+// thread
+#include <thread>
+#include <mutex>
 
 #include <float.h>
 
