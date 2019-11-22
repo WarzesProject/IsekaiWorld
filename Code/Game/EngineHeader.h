@@ -4,7 +4,9 @@
 // Core Header
 #include <Core/BaseHeader.h>
 #include <Core/LogConfig.h>
+#include <Core/Logger.h>
 #include <Core/Error.h>
+#include <Core/NonCopyable.h>
 #include <Core/Thread.h>
 #include <Core/Ini.h>
 #include <Core/Json.h>

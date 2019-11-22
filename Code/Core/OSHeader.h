@@ -7,9 +7,10 @@
 
 #	include <Windows.h>
 #	include <shellapi.h>
+#	include <strsafe.h>
 #	include <TimeAPI.h>
 
-#	if SE_ENABLE_DIRECT3D
+#	if SE_DIRECT3D
 #		include <wrl/client.h>
 #	endif
 #endif

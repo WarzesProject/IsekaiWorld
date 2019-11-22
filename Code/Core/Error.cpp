@@ -17,7 +17,7 @@ void CriticalErrorExit()
 //-----------------------------------------------------------------------------
 void CriticalErrorExit(std::string_view str)
 {
-	Log::Error(str);
+	Logs::Error(str);
 	CriticalErrorExit();
 }
 //-----------------------------------------------------------------------------

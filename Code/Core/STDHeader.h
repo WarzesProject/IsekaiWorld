@@ -43,6 +43,7 @@
 // thread
 #include <thread>
 #include <mutex>
+#include <atomic>
 
 #include <float.h>
 

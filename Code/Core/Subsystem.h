@@ -1,9 +1,10 @@
 #pragma once
 
 #include "Error.h"
+#include "NonCopyable.h"
 
 template <typename T>
-class Subsystem
+class Subsystem : NonCopyable
 {
 public:
 	template<class ...Args>

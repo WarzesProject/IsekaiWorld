@@ -53,7 +53,7 @@ bool Application::initSubsystem()
 	SE_INIT_SUBSYSTEM(Args::Create());
 	SE_INIT_SUBSYSTEM(GlobalTime::Create());
 	SE_INIT_SUBSYSTEM(Console::Create(config.visibleConsole));
-	SE_INIT_SUBSYSTEM(Log::Create(config.log));
+	SE_INIT_SUBSYSTEM(Logs::Create(config.log));
 
 	SE_INIT_SUBSYSTEM(Input::Create());
 	SE_INIT_SUBSYSTEM(Window::Create(config.window));	
@@ -128,7 +128,7 @@ void Application::close()
 	RenderSystem::Destroy();	
 	Window::Destroy();
 	Input::Destroy();	
-	Log::Destroy();
+	Logs::Destroy();
 	Console::Destroy();
 	GlobalTime::Destroy();
 	Args::Destroy();

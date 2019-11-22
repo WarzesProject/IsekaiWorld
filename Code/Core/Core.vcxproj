@@ -180,6 +180,7 @@
     <ClInclude Include="InlineFunc.h" />
     <ClInclude Include="Json.h" />
     <ClInclude Include="Log.h" />
+    <ClInclude Include="Logger.h" />
     <ClInclude Include="LogConfig.h" />
     <ClInclude Include="Macros.h" />
     <ClInclude Include="NonCopyable.h" />
@@ -201,7 +202,7 @@
   <ItemGroup>
     <ClCompile Include="Error.cpp" />
     <ClCompile Include="GlobalTime.cpp" />
-    <ClCompile Include="Log.cpp" />
+    <ClCompile Include="Logger.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
