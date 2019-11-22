@@ -173,8 +173,6 @@
     <ClInclude Include="Configuration.h" />
     <ClInclude Include="D3D11RenderDevice.h" />
     <ClInclude Include="D3D11Renderer.h" />
-    <ClInclude Include="D3DUtils.h" />
-    <ClInclude Include="D3DVendor.h" />
     <ClInclude Include="IRenderer.h" />
     <ClInclude Include="RenderConfig.h" />
     <ClInclude Include="RenderSystem.h" />
@@ -184,8 +182,6 @@
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="D3D11RenderDevice.cpp" />
     <ClCompile Include="D3D11Renderer.cpp" />
-    <ClCompile Include="D3DUtils.cpp" />
-    <ClCompile Include="D3DVendor.cpp" />
     <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

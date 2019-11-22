@@ -19,7 +19,7 @@ inline void logRenderBackend(RenderBackend backend)
 RenderSystem::RenderSystem(RenderConfig &config)
 	: m_config(config)
 {
-#if SE_ENABLE_DIRECT3D11
+#if SE_DIRECT3D11
 	if (m_config.gapi == RenderBackend::Direct3D11)
 		m_renderer = new D3D11Renderer();
 #endif

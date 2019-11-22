@@ -169,17 +169,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Box.h" />
+    <ClInclude Include="Color.h" />
+    <ClInclude Include="ConvexVolume.h" />
     <ClInclude Include="CoreMath.h" />
     <ClInclude Include="Extent2D.h" />
     <ClInclude Include="Extent3D.h" />
+    <ClInclude Include="Matrix.h" />
     <ClInclude Include="Offset2D.h" />
     <ClInclude Include="Offset3D.h" />
+    <ClInclude Include="Plane.h" />
+    <ClInclude Include="Quaternion.h" />
+    <ClInclude Include="Rect.h" />
+    <ClInclude Include="Size.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Vector.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CoreMath.cpp" />
     <ClCompile Include="Extent2D.cpp" />
     <ClCompile Include="Extent3D.cpp" />
+    <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="Offset2D.cpp" />
     <ClCompile Include="Offset3D.cpp" />
     <ClCompile Include="stdafx.cpp">

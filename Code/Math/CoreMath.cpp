@@ -1,6 +1,11 @@
 #include "stdafx.h"
 #include "CoreMath.h"
 //-----------------------------------------------------------------------------
+#if defined(__ANDROID__) && defined(__ARM_NEON__) && defined(__arm__)
+// NEON support must be checked at runtime on 32-bit Android
+const AnrdoidNeonChecker IsSimdAvailable;
+#endif
+//-----------------------------------------------------------------------------
 uint32_t AddUInt32Clamped(uint32_t lhs, uint32_t rhs)
 {
 	constexpr auto max = std::numeric_limits<uint32_t>::max();

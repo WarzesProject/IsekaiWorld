@@ -12,6 +12,15 @@
 
 //-----------------------------------------------------------------------------
 // Math Header
+#include <Math/CoreMath.h>
+#include <Math/Vector.h>
+#include <Math/Box.h>
+#include <Math/Size.h>
+#include <Math/Rect.h>
+#include <Math/Quaternion.h>
+#include <Math/Plane.h>
+#include <Math/Color.h>
+#include <Math/Matrix.h>
 
 //-----------------------------------------------------------------------------
 // Engine Header

@@ -1,5 +1,7 @@
 #pragma once
 
+#define SE_DEVELOPER_NAME "devSapphire3D"
+
 // Enable GAPI
 #define SE_ENABLE_OPENGL     1
 #define SE_ENABLE_DIRECT3D11 1

@@ -5,9 +5,6 @@
     <ClCompile Include="Application.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="D3DUtils.cpp">
-      <Filter>Render\GAPI\D3DCore</Filter>
-    </ClCompile>
     <ClCompile Include="RenderSystem.cpp">
       <Filter>Render\Core</Filter>
     </ClCompile>
@@ -17,9 +14,6 @@
     <ClCompile Include="D3D11RenderDevice.cpp">
       <Filter>Render\GAPI\D3D11\Core</Filter>
     </ClCompile>
-    <ClCompile Include="D3DVendor.cpp">
-      <Filter>Render\GAPI\D3DCore</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -28,9 +22,6 @@
     </ClInclude>
     <ClInclude Include="Configuration.h">
       <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="D3DUtils.h">
-      <Filter>Render\GAPI\D3DCore</Filter>
     </ClInclude>
     <ClInclude Include="RenderConfig.h">
       <Filter>Render\Core</Filter>
@@ -46,9 +37,6 @@
     </ClInclude>
     <ClInclude Include="D3D11RenderDevice.h">
       <Filter>Render\GAPI\D3D11\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="D3DVendor.h">
-      <Filter>Render\GAPI\D3DCore</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

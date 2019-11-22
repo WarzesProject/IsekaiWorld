@@ -1,7 +1,6 @@
 #pragma once
 
 #include "RenderConfig.h"
-#include "D3DUtils.h"
 
 #if SE_DIRECT3D11
 

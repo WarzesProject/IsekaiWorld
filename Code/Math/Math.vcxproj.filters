@@ -17,6 +17,9 @@
     <ClCompile Include="Offset3D.cpp">
       <Filter>Math</Filter>
     </ClCompile>
+    <ClCompile Include="Matrix.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -33,6 +36,33 @@
       <Filter>Math</Filter>
     </ClInclude>
     <ClInclude Include="Offset2D.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Box.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Quaternion.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Rect.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Size.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Plane.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvexVolume.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix.h">
       <Filter>Math</Filter>
     </ClInclude>
   </ItemGroup>
