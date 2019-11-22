@@ -3,7 +3,7 @@
 #include "RenderConfig.h"
 #include "D3DUtils.h"
 
-#if SE_ENABLE_DIRECT3D11
+#if SE_DIRECT3D11
 
 class D3D11RenderDevice
 {

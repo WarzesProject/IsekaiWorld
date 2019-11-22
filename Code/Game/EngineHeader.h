@@ -25,13 +25,19 @@
 #	pragma comment(lib, "Platform.lib")
 #	pragma comment(lib, "Engine.lib")
 #	pragma comment(lib, "3rdparty.lib")
+#	pragma comment(lib, "NewCode.lib")
+
 #	pragma comment(lib, "winmm.lib")
-//#	pragma comment(lib, "imm32.lib")
-//#	pragma comment(lib, "version.lib")
-//#	pragma comment(lib, "OpenGL32.lib")
-//#	pragma comment(lib, "Glu32.lib")
-//#	pragma comment(lib, "d3dcompiler.lib")
-//#	pragma comment(lib, "d3d11.lib")
-//#	pragma comment(lib, "dxgi.lib")
-//#	pragma comment(lib, "dxguid.lib")
+#	pragma comment(lib, "Ws2_32.lib")
+#	pragma comment(lib, "shlwapi.lib")
+
+#	pragma comment(lib, "OpenGL32.lib")
+
+#	pragma comment(lib, "d3d11.lib")
+#	pragma comment(lib, "dxgi.lib")
+#	pragma comment(lib, "dxguid.lib")
+#	pragma comment(lib, "dsound.lib")
+//#	pragma comment(lib, "Xaudio2.lib")
+#	pragma comment(lib, "dinput8.lib")
+#	pragma comment(lib, "xinput9_1_0.lib")
 #endif

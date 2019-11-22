@@ -3,7 +3,7 @@
 #include "IRenderer.h"
 #include "D3D11RenderDevice.h"
 
-#if SE_ENABLE_DIRECT3D11
+#if SE_DIRECT3D11
 
 class D3D11Renderer final : public IRenderer
 {

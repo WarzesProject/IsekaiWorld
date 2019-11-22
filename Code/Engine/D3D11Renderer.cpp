@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "D3D11Renderer.h"
 
-#if SE_ENABLE_DIRECT3D11
+#if SE_DIRECT3D11
 //-----------------------------------------------------------------------------
 D3D11Renderer::D3D11Renderer()
 {

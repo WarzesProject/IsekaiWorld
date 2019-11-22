@@ -1,7 +1,7 @@
 ﻿#include "stdafx.h"
 #include "D3D11RenderDevice.h"
 
-#if SE_ENABLE_DIRECT3D11
+#if SE_DIRECT3D11
 //-----------------------------------------------------------------------------
 bool D3D11RenderDevice::Init(RenderConfig &config)
 {

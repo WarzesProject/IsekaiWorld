@@ -5,7 +5,7 @@
 #	if defined(_WIN32_WINNT) || defined(WINVER)
 #		error "_WIN32_WINNT / WINVER"
 #	endif
-#	define _WIN32_WINNT 0x0601
+#	define _WIN32_WINNT 0x0602
 #	define WINVER _WIN32_WINNT
 
 #	define WIN32_LEAN_AND_MEAN      // 

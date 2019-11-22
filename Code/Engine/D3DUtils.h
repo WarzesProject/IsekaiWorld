@@ -1,6 +1,6 @@
 #pragma once
 
-#if SE_ENABLE_DIRECT3D11
+#if SE_DIRECT3D11
 
 template <typename T>
 using ComPtr = Microsoft::WRL::ComPtr<T>;

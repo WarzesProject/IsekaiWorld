@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "D3DVendor.h"
 
-#if SE_ENABLE_DIRECT3D11
+#if SE_DIRECT3D11
 //-----------------------------------------------------------------------------
 // используется только в DX. В OGL своя реализация. А в вулкане?
 std::string GetVendorByID(unsigned short id)
